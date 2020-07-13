@@ -1,943 +1,532 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Icon, Image, Box, Link, Text, Em, List } from "@quarkly/widgets";
-import { Override, SocialMedia } from "@quarkly/components";
+import { Theme, Image, Box, Text, Link } from "@quarkly/widgets";
 import * as Components from "components";
-import { MdClose, MdMenu } from "react-icons/md";
 export default (() => {
 	return <Theme theme={theme}>
-		<Box quarkly-title="Wrapper" xs-display="flex" display="flex">
-			<Components.ToggleMenu />
+		<Box
+			min-height="80vh"
+			display="flex"
+			justify-content="space-between"
+			background="rgba(0, 0, 0, 0) linear-gradient(0deg,#0e1317 0%,#22262e 100%) 0% 0% /auto repeat scroll padding-box"
+			box-sizing="border-box"
+			flex-direction="column"
+			position="relative"
+			z-index="1"
+			quarkly-title="Home"
+			overflow-x="hidden"
+			overflow-y="visible"
+			padding="32px 16px 0px 16px"
+		>
 			<Box
-				quarkly-title="Side"
-				id="side"
-				xs-width="320px"
-				xs-flex="0 0 auto"
+				quarkly-title="Container"
 				width="100%"
-				max-width="240px"
-				position="relative"
-				z-index="1"
-				max-height="100vh"
-				background="--color-greyL3"
-				min-height="100vh"
-				box-sizing="border-box"
-				sm-position="fixed"
-				sm-z-index="2"
-				sm-left="-240px"
-				sm-top={0}
-				sm-transition="box-shadow 0.3s ease 0s,left 0.3s ease 0s"
+				max-width="1170px"
+				margin="40px auto 40px auto"
+				height="100%"
+				flex="1 0 auto"
 				display="flex"
-				flex-direction="column"
-				justify-content="space-between"
-				sm-box-shadow="0 0 0 0 rgba(0, 0, 0, 0)"
-				overflow-y="auto"
+				align-items="center"
+				flex-direction="row"
+				box-sizing="border-box"
+				lg-max-width="970px"
+				md-max-width="750px"
 			>
-				<Icon
-					category="md"
-					icon={MdClose}
-					quarkly-title="Close"
-					id="side-close"
-					position="absolute"
-					right="16px"
-					top="16px"
-					color="--greyD3"
-					hover-color="--greyD1"
-					cursor="pointer"
-					display="none"
-					sm-display="block"
-					transition="color 0.1s ease 0s"
-				/>
-				<Box flex="1 0 auto">
-					<Box quarkly-title="Logo" display="flex" margin="32px 0px 32px 0px" padding="0px 32px 0px 32px">
-						<Image
-							width="64px"
-							height="64px"
-							quarkly-title="Image"
-							src="https://github.com/quarkly/atomize/raw/master/docs/logo.png"
-							alt="Quarkly / Atomize Logo"
-							margin="0px 8px 0px -4px"
-						/>
+				<Box display="flex">
+					<Image width="220px" height="220px" src="http://dev8.aesarine.ru/atomize-logo.svg" flex="1 0 auto" />
+				</Box>
+				<Box margin="0px 0px 0px 40px">
+					<Text font="normal 500 42px/36px --fontFamily-googleSourceSansPro" color="--greyL5" letter-spacing="3px" margin="0 0 17px 0">
+						ATOMIZE
+					</Text>
+					<Text font="--base" color="--greyL5" margin="8px 0 32px 0" letter-spacing="1px">
+						Library for creating atomic react components
+						<br />
+						Inspired by tachyons and styled-system
+					</Text>
+					<Box margin="16px 0px 0px 0px">
+						<Text font="--code" color="--accentBlue" margin="0 0 0 0" display="inline-block">
+							npm i{" "}
+						</Text>
+						<Text font="--code" color="--accentGreen" margin="0 0 0 0" display="inline-block">
+							@quarkly/atomize styled-components
+						</Text>
 					</Box>
-					<Box quarkly-title="Menu" id="menu">
+					<Box display="flex" margin="16px 0px 0px 0px">
 						<Link
-							href="#getting-started"
-							font="--lead"
-							white-space="nowrap"
+							href="/doc#getting-started"
+							font="normal 500 18px/20px --fontFamily-googleSourceSansPro"
+							color="#FFFFFF"
+							background="--color-accentBlue"
+							padding="14px 20px 14px 20px"
+							border-radius="4px"
 							text-decoration-line="initial"
-							color="--greyD4"
-							hover-color="--blue"
-							active-color="--blue"
-							display="block"
-							quarkly-title="Getting Started"
-							padding="8px 16px 8px 32px"
-							transition="color 0.1s ease 0s"
+							hover-opacity=".9"
+							quarkly-title="Docs"
+							transition="opacity .1s ease 0s"
+							margin="0px 8px 0px 0px"
+							text-shadow="0 1px 0 rgba(0, 0, 0, 0.25)"
+							opacity="1"
 						>
-							Getting Started
+							Read the docs
 						</Link>
 						<Link
-							href="#advanced-usage"
-							font="--lead"
-							white-space="nowrap"
+							href="https://github.com/quarkly/atomize"
+							font="normal 500 18px/20px --fontFamily-googleSourceSansPro"
+							color="#FFFFFF"
+							background="#4F4F4F"
+							padding="14px 20px 14px 20px"
+							border-radius="4px"
 							text-decoration-line="initial"
-							color="--greyD4"
-							hover-color="--blue"
-							active-color="--blue"
-							display="block"
-							quarkly-title="Advanced Usage"
-							padding="8px 16px 8px 32px"
-							transition="color 0.1s ease 0s"
+							hover-opacity=".9"
+							quarkly-title="GitHub"
+							transition="opacity .1s ease 0s"
+							text-shadow="0 1px 0 rgba(0, 0, 0, 0.25)"
+							opacity="1"
 						>
-							Advanced Usage
-						</Link>
-						<Box
-							margin="8px 0px 8px 32px"
-							quarkly-title="Advanced Usage"
-							border-width="0 0 0 2px"
-							border-style="solid"
-							border-color="--color-greyL2"
-						>
-							<Link
-								href="#aliases"
-								font="normal 400 16px/20px --fontFamily-googleSourceSansPro"
-								white-space="nowrap"
-								text-decoration-line="initial"
-								color="--greyD2"
-								hover-color="--blue"
-								active-color="--blue"
-								display="block"
-								quarkly-title="Aliases"
-								padding="8px 16px 8px 48px"
-								margin="0px 0px 0px -32px"
-								transition="color 0.1s ease 0s"
-							>
-								Aliases
-							</Link>
-							<Link
-								href="#themes"
-								font="normal 400 16px/20px --fontFamily-googleSourceSansPro"
-								white-space="nowrap"
-								text-decoration-line="initial"
-								color="--greyD2"
-								hover-color="--blue"
-								active-color="--blue"
-								display="block"
-								quarkly-title="Themes"
-								padding="8px 16px 8px 48px"
-								margin="0px 0px 0px -32px"
-								transition="color 0.1s ease 0s"
-							>
-								Themes
-							</Link>
-							<Link
-								href="#breakpoints"
-								font="normal 400 16px/20px --fontFamily-googleSourceSansPro"
-								white-space="nowrap"
-								text-decoration-line="initial"
-								color="--greyD2"
-								hover-color="--blue"
-								active-color="--blue"
-								display="block"
-								quarkly-title="Breakpoints"
-								padding="8px 16px 8px 48px"
-								margin="0px 0px 0px -32px"
-								transition="color 0.1s ease 0s"
-							>
-								Breakpoints
-							</Link>
-							<Link
-								href="#effects"
-								font="normal 400 16px/20px --fontFamily-googleSourceSansPro"
-								white-space="nowrap"
-								text-decoration-line="initial"
-								color="--greyD2"
-								hover-color="--blue"
-								active-color="--blue"
-								display="block"
-								quarkly-title="Effects"
-								padding="8px 16px 8px 48px"
-								margin="0px 0px 0px -32px"
-								transition="color 0.1s ease 0s"
-							>
-								Effects
-							</Link>
-						</Box>
-						<Link
-							href="#quarkly-widgets"
-							font="--lead"
-							white-space="nowrap"
-							text-decoration-line="initial"
-							color="--greyD4"
-							hover-color="--blue"
-							active-color="--blue"
-							display="block"
-							quarkly-title="Quarkly Widgets"
-							padding="8px 16px 8px 32px"
-							transition="color 0.1s ease 0s"
-						>
-							Quarkly Widgets
-						</Link>
-						<Link
-							href="#api-reference"
-							font="--lead"
-							white-space="nowrap"
-							text-decoration-line="initial"
-							color="--greyD4"
-							hover-color="--blue"
-							active-color="--blue"
-							display="block"
-							quarkly-title="API Reference"
-							padding="8px 16px 8px 32px"
-							transition="color 0.1s ease 0s"
-						>
-							API Reference
+							GitHub
 						</Link>
 					</Box>
 				</Box>
+			</Box>
+			<Box
+				quarkly-title="Container"
+				width="100%"
+				max-width="1170px"
+				margin="32px auto 32px auto"
+				display="flex"
+				justify-content="space-between"
+				align-items="center"
+				box-sizing="border-box"
+				lg-max-width="970px"
+				md-max-width="750px"
+			>
+				<Box position="relative" quarkly-title="Getting Started" left="-16px">
+					<Link
+						href="/doc#getting-started"
+						font="--leadSmall"
+						color="--greyL2"
+						text-decoration-line="initial"
+						text-transform="uppercase"
+						hover-color="--greyL1"
+						padding="8px 16px 8px 16px"
+						display="block"
+						letter-spacing="2px"
+						quarkly-title="Link"
+						transition="color .1s ease 0s"
+						margin="0px 0px 0px 0px"
+					>
+						Getting Started
+					</Link>
+				</Box>
+				<Box position="relative" quarkly-title="Advanced Usage">
+					<Link
+						href="/doc#advanced-usage"
+						font="--leadSmall"
+						color="--greyL2"
+						text-decoration-line="initial"
+						text-transform="uppercase"
+						hover-color="--greyL1"
+						padding="8px 16px 8px 16px"
+						display="block"
+						letter-spacing="2px"
+						quarkly-title="Link"
+						transition="color .1s ease 0s"
+					>
+						Advanced Usage
+					</Link>
+				</Box>
+				<Box position="relative" quarkly-title="Quarkly Widgets">
+					<Link
+						href="/doc#quarkly-widgets"
+						font="--leadSmall"
+						color="--greyL2"
+						text-decoration-line="initial"
+						text-transform="uppercase"
+						hover-color="--greyL1"
+						padding="8px 16px 8px 16px"
+						display="block"
+						letter-spacing="2px"
+						quarkly-title="Link"
+						transition="color .1s ease 0s"
+					>
+						Quarkly Widgets
+					</Link>
+				</Box>
+				<Box position="relative" quarkly-title="API Reference" right="-16px">
+					<Link
+						href="/doc#quarkly-widgets"
+						font="--leadSmall"
+						color="--greyL2"
+						text-decoration-line="initial"
+						text-transform="uppercase"
+						hover-color="--greyL1"
+						padding="8px 16px 8px 16px"
+						display="block"
+						letter-spacing="2px"
+						quarkly-title="Link"
+						transition="color .1s ease 0s"
+					>
+						API Reference
+					</Link>
+				</Box>
+			</Box>
+		</Box>
+		<Box
+			display="flex"
+			justify-content="space-between"
+			box-sizing="border-box"
+			flex-direction="column"
+			position="relative"
+			z-index="1"
+			quarkly-title="Badges"
+			background="--color-greyL2"
+			overflow-x="hidden"
+			overflow-y="visible"
+			padding="0px 16px 0px 16px"
+		>
+			<Box
+				quarkly-title="Container"
+				width="100%"
+				max-width="1170px"
+				margin="32px auto 32px auto"
+				display="flex"
+				align-items="center"
+				box-sizing="border-box"
+				lg-max-width="970px"
+				md-max-width="750px"
+			>
+				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+					<Image src="https://github.com/quarkly/atomize/workflows/CI/badge.svg" />
+				</Link>
+				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+					<Image src="https://camo.githubusercontent.com/02e7a15e9adf4139e4af108080c0b9ee2dcd5321/68747470733a2f2f666c61742e62616467656e2e6e65742f636f6465636f762f632f6769746875622f717561726b6c792f61746f6d697a653f63616368653d33303030" />
+				</Link>
+				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+					<Image src="https://camo.githubusercontent.com/03f43135e80bc5caf43888d25243383a181d7334/68747470733a2f2f666c61742e62616467656e2e6e65742f6e706d2f762f40717561726b6c792f61746f6d697a653f63616368653d33303030" />
+				</Link>
+				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+					<Image src="https://camo.githubusercontent.com/a3d4e61babfb298637d411a8e471072266a17dce/68747470733a2f2f666c61742e62616467656e2e6e65742f62616467652f6c6963656e73652f4d49542f626c7565" />
+				</Link>
+			</Box>
+		</Box>
+		<Box
+			box-sizing="border-box"
+			padding="80px 16px 260px 16px"
+			background="--color-greyL5"
+			position="relative"
+			z-index="1"
+			quarkly-title="Advantages"
+			overflow-x="hidden"
+			overflow-y="visible"
+		>
+			<Box
+				quarkly-title="Container"
+				width="100%"
+				max-width="1170px"
+				margin="0 auto 0 auto"
+				display="block"
+				box-sizing="border-box"
+				flex-direction="column"
+				lg-max-width="970px"
+				md-max-width="750px"
+			>
+				<Box quarkly-title="Features">
+					<Box display="flex">
+						<Text
+							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							display="inline-block"
+							width="100%"
+							margin="0 32px 0 0"
+							text-align="left"
+						>
+							Поддержка hover и других псевдоклассов
+						</Text>
+						<Text
+							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							display="inline-block"
+							width="100%"
+							margin="0 32px 0 32px"
+							text-align="left"
+						>
+							Короткие алиасы на каждое свойство
+						</Text>
+						<Text
+							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							display="inline-block"
+							width="100%"
+							margin="0 0 0 32px"
+							text-align="left"
+						>
+							Минималистичный интерфейс
+						</Text>
+					</Box>
+					<Box height="48px" />
+					<Box display="flex">
+						<Text
+							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							display="inline-block"
+							width="100%"
+							margin="0 32px 0 0"
+							text-align="left"
+						>
+							Создание компонентов с поддержкой атомарного css и тем
+						</Text>
+						<Text
+							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							display="inline-block"
+							width="100%"
+							margin="0 32px 0 32px"
+							text-align="left"
+						>
+							Применение стилей для конкретных медиа-брейкпоинтов
+						</Text>
+						<Text
+							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							display="inline-block"
+							width="100%"
+							margin="0 0 0 32px"
+							text-align="left"
+						>
+							Использование переменных из темы в составных css-свойствах
+						</Text>
+					</Box>
+				</Box>
+			</Box>
+		</Box>
+		<Box
+			min-height={0}
+			height={0}
+			quarkly-title="Demo"
+			overflow-y="visible"
+			padding="0px 16px 0px 16px"
+		>
+			<Box
+				width="100%"
+				max-width="970px"
+				margin="0 auto 0 auto"
+				position="relative"
+				background="--color-greyL5"
+				box-shadow="0 19px 38px 0 rgba(0, 0, 0, 0.3),0 15px 12px 0 rgba(0, 0, 0, 0.22)"
+				z-index="2"
+				display="flex"
+				justify-content="space-around"
+				align-items="center"
+				transform="translateY(-50%)"
+				quarkly-title="Container"
+				border-radius="4px"
+				overflow-x="hidden"
+				overflow-y="hidden"
+				box-sizing="border-box"
+				lg-max-width="970px"
+				md-max-width="750px"
+			>
+				<Components.CodeSandBox
+					border-width={0}
+					border-style="none"
+					border-radius="4px"
+					overflow-x="hidden"
+					overflow-y="hidden"
+					margin="-2px 0px -2px 0px"
+					height="360px"
+				/>
+			</Box>
+		</Box>
+		<Box
+			quarkly-title="Read the docs"
+			padding="200px 16px 60px 16px"
+			background="#22262e"
+			display="flex"
+			justify-content="center"
+			align-items="center"
+			flex-direction="column"
+			overflow-x="hidden"
+			overflow-y="visible"
+		>
+			<Box
+				display="flex"
+				margin="16px 0px 0px 0px"
+				width="100%"
+				max-width="1170px"
+				quarkly-title="Container"
+				lg-max-width="970px"
+				md-max-width="750px"
+			>
 				<Box
-					quarkly-title="Links"
+					quarkly-title="Docs"
 					display="flex"
-					align-items="center"
-					margin="32px 0px 16px 0px"
-					padding="0px 16px 0px 16px"
-					md-padding="0 16px 0px 16px"
+					width="100%"
+					justify-content="flex-end"
+					margin="0px 4px 0px 0px"
 				>
-					<SocialMedia github="https://github.com/quarkly/atomize" width="32px" height="32px">
-						<Override
-							slot="icon"
-							color="--greyD3"
-							font="24px sans-serif"
-							width="18px"
-							height="18px"
-						/>
-						<Override slot="link" hover-background="transparent" />
-					</SocialMedia>
+					<Link
+						href="/doc#getting-started"
+						font="normal 500 18px/20px --fontFamily-googleSourceSansPro"
+						color="#FFFFFF"
+						background="--color-accentBlue"
+						padding="14px 20px 14px 20px"
+						border-radius="4px"
+						text-decoration-line="initial"
+						hover-opacity=".9"
+						quarkly-title="Link"
+						transition="opacity .1s ease 0s"
+						text-shadow="0 1px 0 rgba(0, 0, 0, 0.25)"
+						opacity="1"
+					>
+						Read the docs
+					</Link>
+				</Box>
+				<Box
+					quarkly-title="GitHub"
+					display="flex"
+					width="100%"
+					justify-content="flex-start"
+					margin="0px 0px 0px 4px"
+				>
 					<Link
 						href="https://github.com/quarkly/atomize"
-						quarkly-title="GitHub"
-						font="--lead"
-						color="--greyD4"
+						font="normal 500 18px/20px --fontFamily-googleSourceSansPro"
+						color="#FFFFFF"
+						background="#4F4F4F"
+						padding="14px 20px 14px 20px"
+						border-radius="4px"
 						text-decoration-line="initial"
-						target="_blank"
+						hover-opacity=".9"
+						quarkly-title="Link"
+						transition="opacity .1s ease 0s"
+						text-shadow="0 1px 0 rgba(0, 0, 0, 0.25)"
+						opacity="1"
 					>
 						GitHub
 					</Link>
 				</Box>
 			</Box>
+		</Box>
+		<Box
+			quarkly-title="Quarkly"
+			background="--color-greyL5"
+			padding="80px 16px 80px 16px"
+			display="block"
+			overflow-x="hidden"
+			overflow-y="visible"
+		>
 			<Box
-				quarkly-title="Content"
-				xs-width="100%"
-				xs-flex="1 1 auto"
-				position="relative"
-				z-index="1"
-				min-height="100vh"
-				box-sizing="border-box"
-				padding="88px 5% 56px 5%"
-				overflow-y="auto"
-				overflow-x="hidden"
+				quarkly-title="Container"
+				margin="0px auto 0px auto"
+				height="100%"
+				flex="1 0 auto"
+				display="flex"
+				flex-wrap="wrap"
+				max-width="1170px"
 				width="100%"
-				max-height="100vh"
+				box-sizing="border-box"
+				lg-max-width="970px"
+				md-max-width="750px"
 			>
-				<Icon
-					category="md"
-					icon={MdMenu}
-					quarkly-title="Open"
-					id="side-open"
-					position="absolute"
-					top="16px"
-					left="16px"
-					display="none"
-					sm-display="block"
-					cursor="pointer"
-					transition="color 0.1s ease 0s"
-					color="--greyD3"
-					hover-color="--greyD1"
-					hover-width="36px"
-					hover-height="36px"
-					hover-font="36px sans-serif"
-				/>
-				<Box
-					id="getting-started"
-					position="relative"
-					padding="24px 0 24px 0"
-					quarkly-title="Getting Started"
-					max-width="800px"
-					xl-max-width="600px"
-				>
-					<Text quarkly-title="H1" font="--headline1" margin="0 0px 24px 0px">
-						Getting Started
-					</Text>
-					<Text quarkly-title="P" font="--base">
-						Before you start working with Atomize, you need to set up dependencies:
-					</Text>
-					<Components.Code />
-					<Text quarkly-title="P" font="--base">
-						Atomize serves as a wrapper around a styled-component and has a similar API.
-						<br />
-						Just call the method using the name of the required element:
-					</Text>
-					<Components.Code font="--code">
-						import atomize from '@quarkly/atomize';
-						<br />
-						<br />
-						const Box = atomize.div();
-					</Components.Code>
-					<Text quarkly-title="P" font="--base">
-						As a result, we get the React component that can take any CSS in the form of properties:
-					</Text>
-					<Components.Code font="--code">
-						&lt;Box backgroundColor="red" /&gt;
-					</Components.Code>
-					<Text quarkly-title="P" font="--base">
-						The React inheritance mechanism is also provided:
-					</Text>
-					<Components.Code font="--code">
-						const MyComponent = (&#123; className &#125;) =&gt; &#123;
-						<br />
-						{"    "}// some logic here
-						<br />
-						{"    "}return &lt;div className=&#123; className &#125; /&gt;;
-						<br />
-						&#125;;
-						<br />
-						<br />
-						const Box = atomize(MyComponent);
-					</Components.Code>
-				</Box>
-				<Box
-					id="advanced-usage"
-					position="relative"
-					padding="24px 0 24px 0"
-					quarkly-title="Advanced Usage"
-					max-width="800px"
-					xl-max-width="600px"
-				>
-					<Text quarkly-title="H1" font="--headline1" margin="0 0px 24px 0px">
-						Advanced Usage
-					</Text>
-					<Box id="aliases" position="relative" padding="16px 0 24px 0" quarkly-title="Aliases">
-						<Text
-							quarkly-title="H2"
-							font="--headline2"
-							margin="0 0px 20px 0px"
-							border-width="0 0 1px 0"
-							border-style="solid"
-							border-color="--color-lightD2"
-						>
-							Aliases
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							You can use the system of alias properties to make it easier to use.
-							<br />
-							For example, bgc === backgroundColor:
-						</Text>
-						<Components.Code font="--code">
-							&lt;Box bgc="red" /&gt;
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							To see the full list of properties and aliases, follow this{" "}
-							<Link href="https://github.com/quarkly/atomize/blob/master/docs/aliases.md" color="--blue" hover-color="--greyD4" active-color="--greyD4">
-								link
+				<Box display="flex" justify-content="space-between">
+					<Box width="100%" display="flex" align-items="center" justify-content="center">
+						<Link href="#">
+							<Image width="100%" src="http://dev8.aesarine.ru/scr1.png" flex="1 0 auto" border-radius="4px" />
+						</Link>
+					</Box>
+					<Box width="100%" margin="0px 0px 0px 48px">
+						<Text font="normal 700 36px/1.2 --fontFamily-googleSourceSansPro" color="--greyD4" max-width="720px" margin="0 0 32px 0">
+							Создавайте виджеты для интерактивного редактирования в проекте{" "}
+							<Link
+								href="https://quarkly.io"
+								target="_blank"
+								color="--accentBlue"
+								text-decoration-line="initial"
+								hover-color="--greyD4"
+							>
+								Quarkly.io
 							</Link>
-							.
 						</Text>
-					</Box>
-					<Box id="themes" position="relative" padding="24px 0 24px 0" quarkly-title="Themes">
-						<Text
-							quarkly-title="H2"
-							font="--headline2"
-							margin="0 0px 20px 0px"
-							border-width="0 0 1px 0"
-							border-style="solid"
-							border-color="--color-lightD2"
-						>
-							Themes
+						<Text max-width="640px" margin="0 0 0 0" font="--base" color="--greyD4">
+							Quarkly – это гибрид графического редактора, конструктора сайтов и классических IDE. В Quarkly любой 
+фронтендер
+
+ и дизайнер могут создать собственный сайт или веб-приложение.
 						</Text>
-						<Text quarkly-title="P" font="--base">
-							By default, Atomize components do not include a theme and you need to set up dependencies:
+						<Text max-width="640px" margin="8px 0 0 0" font="--base" color="--greyD4">
+							При этом, фронтендер может добавлять в систему кастомные компоненты, а дизайнер – управлять ими прямо с холста в визуальном режиме. И наоборот: созданный макет в реальном времени трансформируется в код на React.
 						</Text>
-						<Components.Code font="--code">
-							npm i @quarkly/theme
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Quarkly themes are based on CSS variables. The key feature is that variables from themes can be reused both in props and themes. You don’t have to use additional abstractions, like template functions, and no additional editing is needed.
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							To use variables from a theme, just add your theme to an application with a Theme component, describe the property in the theme and call this property using the prefix "--". 
-You can also use it in the theme itself:
-						</Text>
-						<Components.Code font="--code">
-							import Theme from "@quarkly/theme";
-							<br />
-							<br />
-							const theme = &#123;
-							<br />
-							{"    "}color: &#123;
-							<br />
-							{"        "}dark: "#212121"
-							<br />
-							{"    "}&#125;,
-							<br />
-							{"    "}border: &#123;
-							<br />
-							{"        "}dark: "1px solid --color-dark"
-							<br />
-							{"    "}&#125;
-							<br />
-							&#125;;
-							<br />
-							<br />
-							export const MyBox = () =&gt; (
-							<br />
-							{"    "}&lt;Theme theme=&#123; theme &#125;&gt;
-							<br />
-							{"        "}&lt;Box
-							<br />
-							{"            "}width="100px"
-							<br />
-							{"            "}height="100px"
-							<br />
-							{"            "}
-							<br />
-							{"            "}border="--border-dark"
-							<br />
-							{"            "}color="--color-dark"
-							<br />
-							{"        "}/&gt;
-							<br />
-							{"    "}&lt;/Theme&gt;
-							<br />
-							);
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Shorter syntax is used for colors in the JSX markup:
-						</Text>
-						<Components.Code font="--code">
-							&lt;Box color="--dark" /&gt;
-						</Components.Code>
-					</Box>
-					<Box id="breakpoints" position="relative" padding="24px 0 24px 0" quarkly-title="Breakpoints">
-						<Text
-							quarkly-title="H2"
-							font="--headline2"
-							margin="0 0px 20px 0px"
-							border-width="0 0 1px 0"
-							border-style="solid"
-							border-color="--color-lightD2"
-						>
-							Breakpoints
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Themes have breakpoints for working with media expressions. 
-Any property can be prefixed with a breakpoint key name:
-						</Text>
-						<Components.Code font="--code">
-							import Theme from "@quarkly/theme";
-							<br />
-							<br />
-							const theme = &#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}breakpoints: &#123;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}sm: [&#123; type: "min-width", value: 576 &#125;],
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}md: [&#123; type: "min-width", value: 768 &#125;],
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}lg: [&#123; type: "min-width", value: 992 &#125;]
-							<br />
-							{"    \n\n\t\t\t\t\t"}&#125;,
-							<br />
-							{"    \n\n\t\t\t\t\t"}color: &#123;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}'dark-mobile': "#424242",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}'dark-tablet': "#212121"
-							<br />
-							{"    \n\n\t\t\t\t\t"}&#125;
-							<br />
-							&#125;
-							<br />
-							<br />
-							export const MyBox = () =&gt; (
-							<br />
-							{"    \n\n\t\t\t\t\t"}&lt;Theme theme=&#123; theme &#125;&gt;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}&lt;Box
-							<br />
-							{"    \n\n\n    \n\n\n    \n\n\t\t\t\t\t"}width="100px"
-							<br />
-							{"    \n\n\n    \n\n\n    \n\t\t\t\t\t"}height="100px"
-							<br />
-							{"    \n\n\n    \n\n\n    "}
-							<br />
-							{"    \n\n\n    \n\n\n    \n\n\t\t\t\t\t"}color="--dark-mobile"
-							<br />
-							{"    \n\n\n    \n\n\n    \n\n\t\t\t\t\t"}md-color="--dark-tablet"
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}/&gt;
-							<br />
-							{"    \n\n\t\t\t\t\t"}&lt;/Theme&gt;
-							<br />
-							);
-						</Components.Code>
-					</Box>
-					<Box id="effects" position="relative" padding="24px 0 24px 0" quarkly-title="Effects">
-						<Text
-							quarkly-title="H2"
-							font="--headline2"
-							margin="0 0px 20px 0px"
-							border-width="0 0 1px 0"
-							border-style="solid"
-							border-color="--color-lightD2"
-						>
-							Effects
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Just pass an object with the configuration to a component when creating it:
-							<br />
-						</Text>
-						<Components.Code font="--code">
-							const Button = atomize.button(&#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}effects: &#123;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}hover: ":hover",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}focus: ":focus",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}active: ":active",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}disabled: ":disabled"
-							<br />
-							{"    \n\n\t\t\t\t\t"}&#125;
-							<br />
-							&#125;);
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							The key is the prefix in the name of the property, and the value is a CSS selector. This is the same way we implemented pseudo-classes.
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							For example, if you specify the hover prefix for any CSS property, it will be applied to a certain effect:
-						</Text>
-						<Components.Code font="--code">
-							&lt;MySuperButton
-							<br />
-							{"    "}bgc="red"
-							<br />
-							{"    "}hover-bgc="yellow"
-							<br />
-							{"    "}focus-bgc="blue"
-							<br />
-							/&gt;
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							You can also combine effects with media expressions:
-						</Text>
-						<Components.Code font="--code">
-							&lt;Box
-							<br />
-							{"    "}md-hover-bgc="yellow"
-							<br />
-							{"    "}lg-hover-bgc="blue"
-							<br />
-							/&gt;
-						</Components.Code>
 					</Box>
 				</Box>
-				<Box
-					id="quarkly-widgets"
-					position="relative"
-					padding="24px 0 24px 0"
-					quarkly-title="Quarkly Widgets"
-					max-width="800px"
-					xl-max-width="600px"
+			</Box>
+		</Box>
+		<Box
+			padding="32px 16px 32px 16px"
+			background="#0e1317"
+			overflow-x="hidden"
+			overflow-y="visible"
+			quarkly-title="Footer"
+		>
+			<Box
+				quarkly-title="Container"
+				width="100%"
+				max-width="1170px"
+				margin="0px auto 0px auto"
+				height="100%"
+				flex="1 0 auto"
+				display="flex"
+				flex-wrap="wrap"
+				padding="0px 16px 0px 16px"
+				box-sizing="border-box"
+				lg-max-width="970px"
+				md-max-width="750px"
+			>
+				<Link
+					font="normal 400 14px/20px --fontFamily-googleSourceSansPro"
+					color="--greyL2"
+					text-decoration-line="initial"
+					text-transform="uppercase"
+					hover-color="--greyL1"
+					padding="8px 16px 8px 16px"
+					display="block"
+					href="https://github.com/quarkly/atomize"
+					letter-spacing="2px"
+					transition="color .1s ease 0s"
+					quarkly-title="GitHub"
 				>
-					<Text quarkly-title="H1" font="--headline1" margin="0 0px 24px 0px">
-						Quarkly Widgets
-					</Text>
-					<Text quarkly-title="P" font="--base">
-						The second purpose of Atomize is to create widgets in Quarkly based on custom React components.
-					</Text>
-					<Text quarkly-title="P" font="--base">
-						Just wrap your component in Atomize and describe its configuration so that Quarkly can understand which properties can be interactively edited.
-					</Text>
-					<Text quarkly-title="P" font="--base">
-						You do not need to add a Theme to your component when you use it in Quarkly. All the variables from the project will be automatically available in your component.
-					</Text>
-					<Text quarkly-title="P" font="--base" margin="16px 0px 8px 0px">
-						The configuration fields for the component look like this:
-					</Text>
-					<List margin="8px 0px 24px 0px">
-						<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-							<Em>
-								effects
-							</Em>
-							{" "}– defines browser pseudo-classes (hover, focus, etc.)
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-							<Em>
-								description
-							</Em>
-							{" "}– component description that will appear when you mouse over its name
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-							<Em>
-								propInfo
-							</Em>
-							{" "}– configuration of controls that will be displayed on the right panel
-						</Text>
-					</List>
-					<Components.Code font="--code">
-						export default atomize(Box)(
-						<br />
-						{"    \n\n\t\t\t\t"}&#123;
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}effects: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}hover: ":hover"
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}&#125;,
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}description: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}en: "Awesome box component"
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}&#125;,
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}propInfo: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}someProp: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\n    \n\n\t\t\t\t"}control: "input"
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}&#125;
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}&#125;
-						<br />
-						{"    \n\n\t\t\t\t"}&#125;,
-						<br />
-						{"    \n\n\t\t\t\t"}&#123;
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}someProp: "Hello World!"
-						<br />
-						{"    \n\n\t\t\t\t"}&#125;
-						<br />
-						);
-					</Components.Code>
-					<Text quarkly-title="P" font="--base" margin="16px 0px 8px 0px">
-						Possible control options:
-					</Text>
-					<List margin="8px 0px 24px 0px">
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							<Em />
-							input
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							select
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							<Em />
-							color
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							font
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							shadow
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							transition
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							transform
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							filter
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							background
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							checkbox-icon
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							radio-icon
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							<Em />
-							radio-group
-						</Text>
-						<Text quarkly-title="Item" font="--base" margin="4px 0px 4px 0px">
-							checkbox
-						</Text>
-					</List>
-					<Box quarkly-title="Common properties" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Common properties
-						</Text>
-						<Text quarkly-title="P" font="--base" margin="16px 0px 8px 0px">
-							To specify the props to be displayed on the right panel, use this template:
-						</Text>
-						<List margin="8px 0px 24px 0px">
-							<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-								<Em />
-								<Em>
-									description
-								</Em>
-								{" "}– tooltip text based on localization language
-							</Text>
-							<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-								<Em />
-								<Em>
-									control
-								</Em>
-								{" "}– control type (from the list above). It is a required property
-							</Text>
-							<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-								<Em />
-								<Em>
-									category
-								</Em>
-								{" "}– name for your category in the right panel; if there is no category with this name, it will be created automatically
-							</Text>
-							<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-								<Em />
-								<Em>
-									weight
-								</Em>
-								{" "}– control width. The range of values is from 0 to 1, which equals from 0 to 100% of the right panel width. It is possible to show several controls in one line
-							</Text>
-						</List>
-						<Components.Code font="--code">
-							someProp: &#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}description: &#123; en: "Your text" &#125;,
-							<br />
-							{"    \n\n\t\t\t\t\t"}control: "input",
-							<br />
-							{"    \n\n\t\t\t\t\t"}category: 'Main',
-							<br />
-							{"    \n\n\t\t\t\t\t"}weight: 1
-							<br />
-							&#125;
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="Radio-icon" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Radio-icon
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Returns a string with the checked value.{" "}
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Property "checkedValue" describes the name for the selected option:
-						</Text>
-						<Components.Code font="--code">
-							checkedValue: "valueName"
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="Checkbox-icon" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Checkbox-icon
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Returns a string with the checked value.
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Property "checkedValue" describes the name for the selected option.
-							<br />
-							Property "icon" describes the system name for the icon:
-						</Text>
-						<Components.Code font="--code">
-							checkedValue: "valueName",
-							<br />
-							icon: "iconName"
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="Select and radio-group" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Select and radio-group
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Returns a string with the selected value.
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Property "variants" contains a list of available options:
-						</Text>
-						<Components.Code font="--code">
-							variants: ['one', 'two', 'three']
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="Font" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Font
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Returns a string with a font styles:
-						</Text>
-						<Components.Code font="--code">
-							italic normal 400 1em/1.5 --fontFamily-googleRoboto
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="Color" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Color
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Returns a string with a variable or custom value in #HEX or RGBA.
-						</Text>
-					</Box>
-					<Box quarkly-title="Background" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Background
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Returns a string with a variable or custom color in #HEX or RGBA and image or gradient styles if they were defined:
-						</Text>
-						<Components.Code font="--code">
-							// gradient styles
-							<br />
-							#000000 repeating-linear-gradient(90deg,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%)
-							<br />
-							<br />
-							// or image styles
-							<br />
-							--color-dark url(image.png) center/contain no-repeat fixed border-box
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="Transition, transform, shadow and filter" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							Transition, transform, shadow and filter
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Returns a string with a property styles.
-						</Text>
-					</Box>
-				</Box>
-				<Box
-					id="api-reference"
-					position="relative"
-					padding="24px 0 24px 0"
-					quarkly-title="API Reference"
-					max-width="800px"
-					xl-max-width="600px"
+					GitHub
+				</Link>
+				<Link
+					href="/doc"
+					font="normal 400 14px/20px --fontFamily-googleSourceSansPro"
+					color="--greyL2"
+					text-decoration-line="initial"
+					text-transform="uppercase"
+					hover-color="--greyL1"
+					padding="8px 16px 8px 16px"
+					display="block"
+					letter-spacing="2px"
+					transition="color .1s ease 0s"
+					quarkly-title="Docs"
 				>
-					<Text quarkly-title="H1" font="--headline1" margin="0 0px 24px 0px">
-						API Reference
-					</Text>
-					<Box quarkly-title="atomize" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							atomize
-						</Text>
-						<Components.Code font="--code">
-							import atomize from '@quarkly/atomize';
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Default export. This is a wrapper around styled from styled-components.
-						</Text>
-					</Box>
-					<Box quarkly-title="getTransfrom" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							getTransfrom
-						</Text>
-						<Components.Code font="--code">
-							import &#123; getTransform &#125; from '@quarkly/atomize;
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Method that returns a function by name to transform the value.
-						</Text>
-						<Components.Code font="--code" margin="16px 0px 0 0px">
-							getTransform(name: string): function
-						</Components.Code>
-						<List margin="16px 0px 24px 0px">
-							<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
-								<Em />
-								<Em />
-								name - method name for a transform
-							</Text>
-						</List>
-					</Box>
-					<Box quarkly-title="transformVar" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							transformVar
-						</Text>
-						<Components.Code font="--code">
-							import &#123; transformVar &#125; from '@quarkly/atomize;
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Transform of CSS variables:
-						</Text>
-						<Components.Code font="--code">
-							transformVar(key: string, value: string): string;
-						</Components.Code>
-					</Box>
-					<Box margin="32px 0px 0px 0px" quarkly-title="splitCSSRule">
-						<Text quarkly-title="H3" font="--headline3">
-							splitCSSRule
-						</Text>
-						<Components.Code font="--code">
-							import &#123; splitCSSRule &#125; from '@quarkly/atomize;
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Breaks the CSS string into an array of rules.
-						</Text>
-						<Components.Code font="--code">
-							splitCSSRule&lt;T&gt;(rule: T, separator?: string): Array&lt;T&gt;
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="themeDefault" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							themeDefault
-						</Text>
-						<Text quarkly-title="P" font="--base">
-							Default theme for using CSS variables and defining breakpoints.
-						</Text>
-						<Components.Code font="--code">
-							import &#123; themeDefault &#125; from '@quarkly/atomize;
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="dict" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							dict
-						</Text>
-						<Components.Code font="--code">
-							import &#123; dict &#125; from '@quarkly/atomize;
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Dictionary for defining configuration of CSS rules
-						</Text>
-						<Components.Code font="--code">
-							type CSSRule = &#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}alias: string;
-							<br />
-							{"    \n\n\t\t\t\t\t"}type: Array&lt;string&gt; | string;
-							<br />
-							{"    \n\n\t\t\t\t\t"}&lt;key&gt;: string;
-							<br />
-							&#125;
-						</Components.Code>
-					</Box>
-					<Box quarkly-title="aliasesDict" margin="32px 0px 0px 0px">
-						<Text quarkly-title="H3" font="--headline3">
-							aliasesDict
-						</Text>
-						<Components.Code font="--code">
-							import &#123; aliasesDict &#125; from '@quarkly/atomize;
-						</Components.Code>
-						<Text quarkly-title="P" font="--base">
-							Dictionary of abbreviations generated from dict:
-						</Text>
-						<Components.Code font="--code">
-							type Alias =  Omit&lt;CSSRule, "alias"&gt; & &#123;
-							<br />
-							{"    "}name: string;
-							<br />
-							{"    "}&lt;key&gt;: string;
-							<br />
-							&#125;
-						</Components.Code>
-					</Box>
-				</Box>
+					Docs
+				</Link>
+				<Link
+					href="https://dev.to/alex_kols/why-we-gave-up-on-the-idea-of-using-styled-system-to-create-components-and-invented-a-new-wheel-5c4n"
+					font="normal 400 14px/20px --fontFamily-googleSourceSansPro"
+					color="--greyL2"
+					text-decoration-line="initial"
+					text-transform="uppercase"
+					hover-color="--greyL1"
+					padding="8px 16px 8px 16px"
+					display="block"
+					letter-spacing="2px"
+					transition="color .1s ease 0s"
+					quarkly-title="Dev.to"
+				>
+					Dev.to
+				</Link>
 			</Box>
 		</Box>
 	</Theme>;
