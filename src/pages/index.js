@@ -6,16 +6,16 @@ import { Helmet } from "react-helmet";
 export default (() => {
 	return <Theme theme={theme}>
 		<Helmet>
-		<title>Atomize</title>
-		<meta name="author" content="quarkly" />
-		<meta name="description" content="Library for creating atomic react components" />
-		<link itemprop="url" href="https://atomize.quarkly.io/" />
-		<meta itemprop="name" content="atomize" />
-		<meta itemprop="description" content="Library for creating atomic react components" />
-		<meta itemprop="image" content="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
-		<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
-		<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
-        </Helmet>
+			<title>Atomize</title>
+			<meta name="author" content="quarkly" />
+			<meta name="description" content="Library for creating atomic react components" />
+			<link itemprop="url" href="https://atomize.quarkly.io/" />
+			<meta itemprop="name" content="atomize" />
+			<meta itemprop="description" content="Library for creating atomic react components" />
+			<meta itemprop="image" content="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+			<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+			<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+		</Helmet>
 		<Box
 			min-height="80vh"
 			display="flex"
@@ -46,6 +46,7 @@ export default (() => {
 				md-max-width="750px"
 				xs-flex-direction="column"
 				xs-align-items="flex-start"
+				xs-margin="40px auto 24px auto"
 			>
 				<Box display="flex">
 					<Image
@@ -71,7 +72,7 @@ export default (() => {
 					>
 						Library for creating atomic react components
 						<br />
-						Inspired by tachyons and styled-system
+						Inspired by Tachyons and Styled-system
 					</Text>
 					<Box margin="16px 0px 0px 0px">
 						<Text
@@ -146,8 +147,7 @@ export default (() => {
 				lg-max-width="970px"
 				md-max-width="750px"
 				sm-flex-wrap="wrap"
-				sm-margin="24px auto 24px auto"
-				xs-max-width="360px"
+				sm-margin="24px auto 24px -16p"
 				xs-margin="16px -16px 24px -16px"
 				xs-font="normal 400 12px/16px --fontFamily-googleSourceSansPro"
 			>
@@ -159,6 +159,7 @@ export default (() => {
 					sm-left={0}
 					sm-right={0}
 					sm-text-align="center"
+					xs-width="100%"
 				>
 					<Link
 						href="/docs#getting-started"
@@ -175,6 +176,7 @@ export default (() => {
 						margin="0px 0px 0px 0px"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 						xs-text-align="left"
+						xs-padding="12px 16px 12px 16px"
 					>
 						Getting Started
 					</Link>
@@ -186,6 +188,7 @@ export default (() => {
 					sm-left={0}
 					sm-right={0}
 					sm-text-align="center"
+					xs-width="100%"
 				>
 					<Link
 						href="/docs#advanced-usage"
@@ -201,6 +204,7 @@ export default (() => {
 						transition="color .1s ease 0s"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 						xs-text-align="left"
+						xs-padding="12px 16px 12px 16px"
 					>
 						Advanced Usage
 					</Link>
@@ -212,6 +216,7 @@ export default (() => {
 					sm-left={0}
 					sm-right={0}
 					sm-text-align="center"
+					xs-width="100%"
 				>
 					<Link
 						href="/docs#quarkly-widgets"
@@ -227,6 +232,7 @@ export default (() => {
 						transition="color .1s ease 0s"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 						xs-text-align="left"
+						xs-padding="12px 16px 12px 16px"
 					>
 						Quarkly Widgets
 					</Link>
@@ -239,6 +245,7 @@ export default (() => {
 					sm-left={0}
 					sm-right={0}
 					sm-text-align="center"
+					xs-width="100%"
 				>
 					<Link
 						href="/docs#quarkly-widgets"
@@ -254,6 +261,7 @@ export default (() => {
 						transition="color .1s ease 0s"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 						xs-text-align="left"
+						xs-padding="12px 16px 12px 16px"
 					>
 						API Reference
 					</Link>
@@ -286,6 +294,7 @@ export default (() => {
 				box-sizing="border-box"
 				lg-max-width="970px"
 				md-max-width="750px"
+				flex-wrap="wrap"
 			>
 				<Link
 					href="https://github.com/quarkly/atomize/workflows/CI/badge.svg"
@@ -336,6 +345,7 @@ export default (() => {
 			overflow-y="visible"
 			md-padding="40px 16px 220px 16px"
 			sm-padding="20px 16px 200px 16px"
+			xs-padding="40px 16px 20px 16px"
 		>
 			<Box
 				quarkly-title="Container"
@@ -349,126 +359,246 @@ export default (() => {
 				md-max-width="750px"
 			>
 				<Box display="flex" flex-wrap="wrap" margin="0px -16px 0px -16px" xs-margin="0px 0 0px 0">
-					<Text
-						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
-						color="--greyD4"
-						display="inline-block"
+					<Box
+						display="flex"
 						width="33.33%"
-						text-align="left"
 						md-margin="mixed 24px mixed 0"
 						sm-margin="10px 0 10px 0"
-						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
 						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="4"
 						xs-width="100%"
-						xs-padding="0px 0 0px 0"
+						xs-padding="0px 0 0px 16px"
 						xs-margin="8px 0 8px 0"
+						position="relative"
 					>
-						Support for hover and any other pseudo-classes
-					</Text>
-					<Text
-						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
-						color="--greyD4"
-						display="inline-block"
+						<Box
+							width="4px"
+							height="4px"
+							background="--color-greyD4"
+							min-width={0}
+							min-height={0}
+							border-radius="50%"
+							overflow-x="hidden"
+							overflow-y="hidden"
+							position="absolute"
+							top="12px"
+							display="none"
+							xs-display="block"
+							left={0}
+						/>
+						<Text
+							font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							text-align="left"
+							sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+							margin="0 0 0 0"
+						>
+							Support for hover and any other pseudo-classes
+						</Text>
+					</Box>
+					<Box
+						display="flex"
 						width="33.33%"
-						text-align="left"
 						md-margin="mixed 24px mixed 24px"
 						sm-margin="10px 0 10px 0"
-						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
 						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="5"
 						xs-width="100%"
-						xs-padding="0px 0 0px 0"
+						xs-padding="0px 0 0px 16px"
 						xs-margin="8px 0 8px 0"
+						position="relative"
 					>
-						Short aliases for each property{"\n\n"}
-					</Text>
-					<Text
-						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
-						color="--greyD4"
-						display="inline-block"
+						<Box
+							width="4px"
+							height="4px"
+							background="--color-greyD4"
+							min-width={0}
+							min-height={0}
+							border-radius="50%"
+							overflow-x="hidden"
+							overflow-y="hidden"
+							position="absolute"
+							top="12px"
+							display="none"
+							xs-display="block"
+							left={0}
+						/>
+						<Text
+							font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							text-align="left"
+							sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+							margin="0 0 0 0"
+						>
+							Short aliases for each property
+						</Text>
+					</Box>
+					<Box
+						display="flex"
 						width="33.33%"
-						text-align="left"
 						md-margin="mixed 0 mixed 24px"
 						sm-margin="10px 0 10px 0"
-						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
 						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="6"
 						xs-width="100%"
-						xs-padding="0px 0 0px 0"
+						xs-padding="0px 0 0px 16px"
 						xs-margin="8px 0 8px 0"
+						position="relative"
 					>
-						Minimalistic interface{"\n\n"}
-					</Text>
-					<Text
-						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
-						color="--greyD4"
-						display="inline-block"
+						<Box
+							width="4px"
+							height="4px"
+							background="--color-greyD4"
+							min-width={0}
+							min-height={0}
+							border-radius="50%"
+							overflow-x="hidden"
+							overflow-y="hidden"
+							position="absolute"
+							top="12px"
+							display="none"
+							xs-display="block"
+							left={0}
+						/>
+						<Text
+							font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							text-align="left"
+							sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+							margin="0 0 0 0"
+						>
+							Minimalistic interface
+						</Text>
+					</Box>
+					<Box
 						width="33.33%"
-						text-align="left"
+						display="flex"
 						md-margin="mixed 24px mixed 0"
 						sm-margin="10px 0 10px 0"
-						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
 						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="1"
 						xs-width="100%"
-						xs-padding="0px 0 0px 0"
+						xs-padding="0px 0 0px 16px"
 						xs-margin="8px 0 8px 0"
+						position="relative"
 					>
-						Opportunity to create components that support atomic CSS and themes
-					</Text>
-					<Text
-						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
-						color="--greyD4"
-						display="inline-block"
+						<Box
+							width="4px"
+							height="4px"
+							background="--color-greyD4"
+							min-width={0}
+							min-height={0}
+							border-radius="50%"
+							overflow-x="hidden"
+							overflow-y="hidden"
+							position="absolute"
+							top="12px"
+							display="none"
+							xs-display="block"
+							left={0}
+						/>
+						<Text
+							font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							text-align="left"
+							sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+							margin="0 0 0 0"
+						>
+							Opportunity to create components that support atomic CSS and themes
+						</Text>
+					</Box>
+					<Box
+						display="flex"
 						width="33.33%"
-						text-align="left"
 						md-margin="mixed 24px mixed 24px"
 						sm-margin="10px 0 10px 0"
-						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
 						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="3"
 						xs-width="100%"
-						xs-padding="0px 0 0px 0"
+						xs-padding="0px 0 0px 16px"
 						xs-margin="8px 0 8px 0"
+						position="relative"
 					>
-						Opportunity to set styles for specific media breakpoints
-					</Text>
-					<Text
-						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
-						color="--greyD4"
-						display="inline-block"
+						<Box
+							width="4px"
+							height="4px"
+							background="--color-greyD4"
+							min-width={0}
+							min-height={0}
+							border-radius="50%"
+							overflow-x="hidden"
+							overflow-y="hidden"
+							position="absolute"
+							top="12px"
+							display="none"
+							xs-display="block"
+							left={0}
+						/>
+						<Text
+							font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							text-align="left"
+							sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+							margin="0 0 0 0"
+						>
+							Opportunity to set styles for specific media breakpoints
+						</Text>
+					</Box>
+					<Box
+						display="flex"
 						width="33.33%"
-						text-align="left"
 						md-margin="mixed 0 mixed 24px"
 						sm-margin="10px 0 10px 0"
-						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
 						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="2"
 						xs-width="100%"
-						xs-padding="0px 0 0px 0"
+						xs-padding="0px 0 0px 16px"
 						xs-margin="8px 0 8px 0"
+						position="relative"
 					>
-						Option to use variables from the theme in composite CSS properties
-					</Text>
+						<Box
+							width="4px"
+							height="4px"
+							background="--color-greyD4"
+							min-width={0}
+							min-height={0}
+							border-radius="50%"
+							overflow-x="hidden"
+							overflow-y="hidden"
+							position="absolute"
+							top="12px"
+							display="none"
+							xs-display="block"
+							left={0}
+						/>
+						<Text
+							font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							text-align="left"
+							sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+							margin="0 0 0 0"
+						>
+							Option to use variables from the theme in composite CSS properties
+						</Text>
+					</Box>
 				</Box>
 			</Box>
 		</Box>
@@ -478,6 +608,7 @@ export default (() => {
 			quarkly-title="Demo"
 			overflow-y="visible"
 			padding="0px 16px 0px 16px"
+			xs-display="none"
 		>
 			<Box
 				width="100%"
@@ -521,6 +652,8 @@ export default (() => {
 			overflow-x="hidden"
 			overflow-y="visible"
 			md-padding="190px 16px 40px 16px"
+			xs-padding="40px 16px 40px 16px"
+			xs-display="none"
 		>
 			<Box
 				display="flex"
@@ -531,6 +664,7 @@ export default (() => {
 				lg-max-width="970px"
 				md-max-width="750px"
 				sm-justify-content="center"
+				xs-margin="0px 0px 0px 0px"
 			>
 				<Box
 					quarkly-title="Docs"
@@ -593,6 +727,7 @@ export default (() => {
 			overflow-y="visible"
 			md-padding="60px 16px 60px 16px"
 			sm-padding="40px 16px 40px 16px"
+			xs-padding="20px 16px 40px 16px"
 		>
 			<Box
 				quarkly-title="Container"
@@ -631,7 +766,7 @@ export default (() => {
 							>
 								Quarkly.io
 							</Link>
-							{" \n"}components
+							{" "}components
 						</Text>
 						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
 							Quarkly is a design tool
@@ -639,7 +774,7 @@ for creating websites
 and web apps. using components, react.js, and atomic CSS.
 						</Text>
 						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
-							Atomize allows you to set styles for a specific component depending on a breakpoint, configure their states, add variables from the theme, transfer the desired props on a special panel (Props tab), and more.{"\n\n"}
+							Atomize allows you to set styles for a specific component depending on a breakpoint, configure their states, add variables from the theme, transfer the desired props on a special panel (Props tab), and more.
 						</Text>
 					</Box>
 				</Box>
@@ -666,6 +801,8 @@ and web apps. using components, react.js, and atomic CSS.
 				box-sizing="border-box"
 				lg-max-width="970px"
 				md-max-width="750px"
+				xs-padding="0px 0 0px 0"
+				xs-margin="0px -16px 0px -16px"
 			>
 				<Link
 					font="normal 400 14px/20px --fontFamily-googleSourceSansPro"
