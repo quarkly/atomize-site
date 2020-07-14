@@ -12,9 +12,9 @@ export default (() => {
 			<link itemprop="url" href="https://atomize.quarkly.io/" />
 			<meta itemprop="name" content="atomize" />
 			<meta itemprop="description" content="Library for creating atomic react components" />
-			<meta itemprop="image" content="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
-			<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
-			<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+			<meta itemprop="image" content="https://uploads.quarkly.io/atomize-site/atomize-logo-dark.png" />
+			<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo-dark.png" />
+			<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo-dark.png" />
 		</Helmet>
 		<Box
 			min-height="80vh"
