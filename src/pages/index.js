@@ -33,6 +33,7 @@ export default (() => {
 				lg-max-width="970px"
 				md-max-width="750px"
 				xs-flex-direction="column"
+				xs-align-items="flex-start"
 			>
 				<Box display="flex">
 					<Image
@@ -134,6 +135,9 @@ export default (() => {
 				md-max-width="750px"
 				sm-flex-wrap="wrap"
 				sm-margin="24px auto 24px auto"
+				xs-max-width="360px"
+				xs-margin="16px -16px 24px -16px"
+				xs-font="normal 400 12px/16px --fontFamily-googleSourceSansPro"
 			>
 				<Box
 					position="relative"
@@ -158,6 +162,7 @@ export default (() => {
 						transition="color .1s ease 0s"
 						margin="0px 0px 0px 0px"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
+						xs-text-align="left"
 					>
 						Getting Started
 					</Link>
@@ -183,6 +188,7 @@ export default (() => {
 						quarkly-title="Link"
 						transition="color .1s ease 0s"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
+						xs-text-align="left"
 					>
 						Advanced Usage
 					</Link>
@@ -208,6 +214,7 @@ export default (() => {
 						quarkly-title="Link"
 						transition="color .1s ease 0s"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
+						xs-text-align="left"
 					>
 						Quarkly Widgets
 					</Link>
@@ -234,6 +241,7 @@ export default (() => {
 						quarkly-title="Link"
 						transition="color .1s ease 0s"
 						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
+						xs-text-align="left"
 					>
 						API Reference
 					</Link>
@@ -328,9 +336,9 @@ export default (() => {
 				lg-max-width="970px"
 				md-max-width="750px"
 			>
-				<Box display="flex" flex-wrap="wrap" margin="0px -20px 0px -20px" xs-margin="0px 0 0px 0">
+				<Box display="flex" flex-wrap="wrap" margin="0px -16px 0px -16px" xs-margin="0px 0 0px 0">
 					<Text
-						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
 						color="--greyD4"
 						display="inline-block"
 						width="33.33%"
@@ -339,7 +347,7 @@ export default (() => {
 						sm-margin="10px 0 10px 0"
 						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
-						padding="0px 20px 0px 20px"
+						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="4"
@@ -347,10 +355,10 @@ export default (() => {
 						xs-padding="0px 0 0px 0"
 						xs-margin="8px 0 8px 0"
 					>
-						Поддержка hover и других псевдоклассов
+						Support for hover and any other pseudo-classes
 					</Text>
 					<Text
-						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
 						color="--greyD4"
 						display="inline-block"
 						width="33.33%"
@@ -359,7 +367,7 @@ export default (() => {
 						sm-margin="10px 0 10px 0"
 						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
-						padding="0px 20px 0px 20px"
+						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="5"
@@ -367,10 +375,10 @@ export default (() => {
 						xs-padding="0px 0 0px 0"
 						xs-margin="8px 0 8px 0"
 					>
-						Короткие алиасы на каждое свойство
+						Short aliases for each property{"\n\n"}
 					</Text>
 					<Text
-						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
 						color="--greyD4"
 						display="inline-block"
 						width="33.33%"
@@ -379,7 +387,7 @@ export default (() => {
 						sm-margin="10px 0 10px 0"
 						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
-						padding="0px 20px 0px 20px"
+						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="6"
@@ -387,10 +395,10 @@ export default (() => {
 						xs-padding="0px 0 0px 0"
 						xs-margin="8px 0 8px 0"
 					>
-						Минималистичный интерфейс
+						Minimalistic interface{"\n\n"}
 					</Text>
 					<Text
-						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
 						color="--greyD4"
 						display="inline-block"
 						width="33.33%"
@@ -399,7 +407,7 @@ export default (() => {
 						sm-margin="10px 0 10px 0"
 						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
-						padding="0px 20px 0px 20px"
+						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="1"
@@ -407,10 +415,10 @@ export default (() => {
 						xs-padding="0px 0 0px 0"
 						xs-margin="8px 0 8px 0"
 					>
-						Создание компонентов с поддержкой атомарного css и тем
+						Opportunity to create components that support atomic CSS and themes
 					</Text>
 					<Text
-						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
 						color="--greyD4"
 						display="inline-block"
 						width="33.33%"
@@ -419,7 +427,7 @@ export default (() => {
 						sm-margin="10px 0 10px 0"
 						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
-						padding="0px 20px 0px 20px"
+						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="3"
@@ -427,10 +435,10 @@ export default (() => {
 						xs-padding="0px 0 0px 0"
 						xs-margin="8px 0 8px 0"
 					>
-						Применение стилей для конкретных медиа-брейкпоинтов
+						Opportunity to set styles for specific media breakpoints
 					</Text>
 					<Text
-						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						font="normal 600 17.5px/1.5 --fontFamily-googleSourceSansPro"
 						color="--greyD4"
 						display="inline-block"
 						width="33.33%"
@@ -439,7 +447,7 @@ export default (() => {
 						sm-margin="10px 0 10px 0"
 						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
 						margin="20px 0 20px 0"
-						padding="0px 20px 0px 20px"
+						padding="0px 16px 0px 16px"
 						box-sizing="border-box"
 						sm-width="50%"
 						sm-order="2"
@@ -447,7 +455,7 @@ export default (() => {
 						xs-padding="0px 0 0px 0"
 						xs-margin="8px 0 8px 0"
 					>
-						Использование переменных из темы в составных css-свойствах
+						Option to use variables from the theme in composite CSS properties
 					</Text>
 				</Box>
 			</Box>
@@ -601,7 +609,7 @@ export default (() => {
 							lg-font="normal 700 28px/1.2 --fontFamily-googleSourceSansPro"
 							sm-margin="0 0 20px 0"
 						>
-							Atomize — основа компонентов{"\n\n\n\n "}
+							Atomize is the basis for{" "}
 							<Link
 								href="https://quarkly.io"
 								target="_blank"
@@ -611,12 +619,15 @@ export default (() => {
 							>
 								Quarkly.io
 							</Link>
+							{" \n"}components
 						</Text>
 						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
-							Quarkly — дизайн-инструмент для создания сайтов и веб-приложений с использованием компонентного подхода, react.js и атомарного css.{"\n\n"}
+							Quarkly is a design tool
+for creating websites
+and web apps. using components, react.js, and atomic CSS.
 						</Text>
 						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
-							Atomize позволяет стилизовать компоненты в Quarkly в зависимости от брейкпоинта, управлять их состояниями, добавлять значения из темы, выводить необходимые пропсы на специальной панели и многое другое.{"\n\n"}
+							Atomize allows you to set styles for a specific component depending on a breakpoint, configure their states, add variables from the theme, transfer the desired props on a special panel (Props tab), and more.{"\n\n"}
 						</Text>
 					</Box>
 				</Box>
