@@ -53,7 +53,7 @@ export default (() => {
 							width="64px"
 							height="64px"
 							quarkly-title="Image"
-							src="https://github.com/quarkly/atomize/raw/master/docs/logo.png"
+							src="https://uploads.quarkly.io/atomize-site/atomize-logo.svg"
 							alt="Quarkly / Atomize Logo"
 							margin="0px 8px 0px -4px"
 						/>
@@ -201,7 +201,7 @@ export default (() => {
 					padding="0px 16px 0px 16px"
 					md-padding="0 16px 0px 16px"
 				>
-					<SocialMedia github="https://github.com/quarkly/atomize" width="32px" height="32px">
+					<SocialMedia github="https://github.com/quarkly/atomize" width="32px" height="32px" background="transparent">
 						<Override
 							slot="icon"
 							color="--greyD3"
@@ -209,7 +209,7 @@ export default (() => {
 							width="18px"
 							height="18px"
 						/>
-						<Override slot="link" hover-background="transparent" />
+						<Override slot="link" hover-background="transparent" background="transparent" />
 					</SocialMedia>
 					<Link
 						href="https://github.com/quarkly/atomize"

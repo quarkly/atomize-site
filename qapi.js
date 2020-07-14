@@ -7,7 +7,7 @@ export default {
 			"children": [
 				"5ef71e08e49347001e17fecb",
 				"5ef71e08e49347001e17fecd",
-				"5f07050b006278001e6340c8"
+				"5f0c50eb006278001e634575"
 			]
 		},
 		"5ef71e08e49347001e17fecb": {
@@ -20,10 +20,10 @@ export default {
 			"name": "index",
 			"pageUrl": "index"
 		},
-		"5f07050b006278001e6340c8": {
-			"id": "5f07050b006278001e6340c8",
-			"pageUrl": "main",
-			"name": "main"
+		"5f0c50eb006278001e634575": {
+			"id": "5f0c50eb006278001e634575",
+			"pageUrl": "docs",
+			"name": "docs"
 		}
 	},
 	"projectType": "gatsby"

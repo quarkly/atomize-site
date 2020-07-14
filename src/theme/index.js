@@ -81,7 +81,9 @@ export default {
 		"base": "normal 400 16px/1.5 --fontFamily-googleSourceSansPro",
 		"lead": "normal 400 16px/20px --fontFamily-googleSourceSansPro",
 		"code": "normal 400 16px/1.5 --fontFamily-mono",
-		"leadSmall": "normal 400 14px/16px --fontFamily-googleSourceSansPro"
+		"leadSmall": "normal 400 14px/16px --fontFamily-googleSourceSansPro",
+		"baseSmall": "normal 400 14px/1.5 --fontFamily-googleSourceSansPro",
+		"codeSmall": "normal 400 14px/1.5 --fontFamily-mono"
 	},
 	"boxShadow": {
 		"m": "0 4px 5px -1px rgba(0, 0, 0, 0.1)",
@@ -213,5 +215,5 @@ export default {
 			}
 		}
 	},
-	"version": 145
+	"version": 150
 }

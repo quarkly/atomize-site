@@ -17,6 +17,7 @@ export default (() => {
 			overflow-x="hidden"
 			overflow-y="visible"
 			padding="32px 16px 0px 16px"
+			sm-padding="24px 16px 0px 16px"
 		>
 			<Box
 				quarkly-title="Container"
@@ -31,30 +32,57 @@ export default (() => {
 				box-sizing="border-box"
 				lg-max-width="970px"
 				md-max-width="750px"
+				xs-flex-direction="column"
 			>
 				<Box display="flex">
-					<Image width="220px" height="220px" src="http://dev8.aesarine.ru/atomize-logo.svg" flex="1 0 auto" />
+					<Image
+						width="220px"
+						height="220px"
+						src="https://uploads.quarkly.io/atomize-site/atomize-logo.svg"
+						flex="1 0 auto"
+						sm-width="160px"
+						sm-height="160px"
+					/>
 				</Box>
-				<Box margin="0px 0px 0px 40px">
+				<Box margin="0px 0px 0px 48px" sm-margin="0px 0px 0px 24px" xs-margin="40px 0px 0px 0">
 					<Text font="normal 500 42px/36px --fontFamily-googleSourceSansPro" color="--greyL5" letter-spacing="3px" margin="0 0 17px 0">
 						ATOMIZE
 					</Text>
-					<Text font="--base" color="--greyL5" margin="8px 0 32px 0" letter-spacing="1px">
+					<Text
+						font="--base"
+						color="--greyL5"
+						margin="8px 0 32px 0"
+						letter-spacing="1px"
+						sm-font="--baseSmall"
+						sm-margin="8px 0 24px 0"
+					>
 						Library for creating atomic react components
 						<br />
 						Inspired by tachyons and styled-system
 					</Text>
 					<Box margin="16px 0px 0px 0px">
-						<Text font="--code" color="--accentBlue" margin="0 0 0 0" display="inline-block">
+						<Text
+							font="--code"
+							color="--accentBlue"
+							margin="0 0 0 0"
+							display="inline-block"
+							sm-font="--codeSmall"
+						>
 							npm i{" "}
 						</Text>
-						<Text font="--code" color="--accentGreen" margin="0 0 0 0" display="inline-block">
+						<Text
+							font="--code"
+							color="--accentGreen"
+							margin="0 0 0 0"
+							display="inline-block"
+							sm-font="--codeSmall"
+						>
 							@quarkly/atomize styled-components
 						</Text>
 					</Box>
 					<Box display="flex" margin="16px 0px 0px 0px">
 						<Link
-							href="/doc#getting-started"
+							href="/docs"
 							font="normal 500 18px/20px --fontFamily-googleSourceSansPro"
 							color="#FFFFFF"
 							background="--color-accentBlue"
@@ -67,6 +95,8 @@ export default (() => {
 							margin="0px 8px 0px 0px"
 							text-shadow="0 1px 0 rgba(0, 0, 0, 0.25)"
 							opacity="1"
+							sm-font="normal 500 16px/20px --fontFamily-googleSourceSansPro"
+							sm-padding="12px 16px 14pxpx 16px"
 						>
 							Read the docs
 						</Link>
@@ -83,6 +113,8 @@ export default (() => {
 							transition="opacity .1s ease 0s"
 							text-shadow="0 1px 0 rgba(0, 0, 0, 0.25)"
 							opacity="1"
+							sm-font="normal 500 16px/20px --fontFamily-googleSourceSansPro"
+							sm-padding="12px 16px 14pxpx 16px"
 						>
 							GitHub
 						</Link>
@@ -100,10 +132,20 @@ export default (() => {
 				box-sizing="border-box"
 				lg-max-width="970px"
 				md-max-width="750px"
+				sm-flex-wrap="wrap"
+				sm-margin="24px auto 24px auto"
 			>
-				<Box position="relative" quarkly-title="Getting Started" left="-16px">
+				<Box
+					position="relative"
+					quarkly-title="Getting Started"
+					left="-16px"
+					sm-width="50%"
+					sm-left={0}
+					sm-right={0}
+					sm-text-align="center"
+				>
 					<Link
-						href="/doc#getting-started"
+						href="/docs#getting-started"
 						font="--leadSmall"
 						color="--greyL2"
 						text-decoration-line="initial"
@@ -115,13 +157,21 @@ export default (() => {
 						quarkly-title="Link"
 						transition="color .1s ease 0s"
 						margin="0px 0px 0px 0px"
+						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 					>
 						Getting Started
 					</Link>
 				</Box>
-				<Box position="relative" quarkly-title="Advanced Usage">
+				<Box
+					position="relative"
+					quarkly-title="Advanced Usage"
+					sm-width="50%"
+					sm-left={0}
+					sm-right={0}
+					sm-text-align="center"
+				>
 					<Link
-						href="/doc#advanced-usage"
+						href="/docs#advanced-usage"
 						font="--leadSmall"
 						color="--greyL2"
 						text-decoration-line="initial"
@@ -132,13 +182,21 @@ export default (() => {
 						letter-spacing="2px"
 						quarkly-title="Link"
 						transition="color .1s ease 0s"
+						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 					>
 						Advanced Usage
 					</Link>
 				</Box>
-				<Box position="relative" quarkly-title="Quarkly Widgets">
+				<Box
+					position="relative"
+					quarkly-title="Quarkly Widgets"
+					sm-width="50%"
+					sm-left={0}
+					sm-right={0}
+					sm-text-align="center"
+				>
 					<Link
-						href="/doc#quarkly-widgets"
+						href="/docs#quarkly-widgets"
 						font="--leadSmall"
 						color="--greyL2"
 						text-decoration-line="initial"
@@ -149,13 +207,22 @@ export default (() => {
 						letter-spacing="2px"
 						quarkly-title="Link"
 						transition="color .1s ease 0s"
+						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 					>
 						Quarkly Widgets
 					</Link>
 				</Box>
-				<Box position="relative" quarkly-title="API Reference" right="-16px">
+				<Box
+					position="relative"
+					quarkly-title="API Reference"
+					right="-16px"
+					sm-width="50%"
+					sm-left={0}
+					sm-right={0}
+					sm-text-align="center"
+				>
 					<Link
-						href="/doc#quarkly-widgets"
+						href="/docs#quarkly-widgets"
 						font="--leadSmall"
 						color="--greyL2"
 						text-decoration-line="initial"
@@ -166,6 +233,7 @@ export default (() => {
 						letter-spacing="2px"
 						quarkly-title="Link"
 						transition="color .1s ease 0s"
+						sm-font="normal 400 12px/16px Source Sans Pro, sans-serif"
 					>
 						API Reference
 					</Link>
@@ -183,120 +251,204 @@ export default (() => {
 			background="--color-greyL2"
 			overflow-x="hidden"
 			overflow-y="visible"
-			padding="0px 16px 0px 16px"
+			padding="32px 16px 32px 16px"
+			sm-padding="16px 16px 16px 16px"
+			md-padding="24px 16px 24px 16px"
+			lg-padding="32px 16px 32px 16px"
 		>
 			<Box
 				quarkly-title="Container"
 				width="100%"
 				max-width="1170px"
-				margin="32px auto 32px auto"
+				margin="0 auto -4px auto"
 				display="flex"
 				align-items="center"
 				box-sizing="border-box"
 				lg-max-width="970px"
 				md-max-width="750px"
 			>
-				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+				<Link
+					href="https://github.com/quarkly/atomize/workflows/CI/badge.svg"
+					display="flex"
+					text-decoration-line="initial"
+					margin="0px 4px 4px 0px"
+					target="_blank"
+				>
 					<Image src="https://github.com/quarkly/atomize/workflows/CI/badge.svg" />
 				</Link>
-				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+				<Link
+					href="https://codecov.io/github/quarkly/atomize"
+					display="flex"
+					text-decoration-line="initial"
+					margin="0px 4px 4px 0px"
+					target="_blank"
+				>
 					<Image src="https://camo.githubusercontent.com/02e7a15e9adf4139e4af108080c0b9ee2dcd5321/68747470733a2f2f666c61742e62616467656e2e6e65742f636f6465636f762f632f6769746875622f717561726b6c792f61746f6d697a653f63616368653d33303030" />
 				</Link>
-				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+				<Link
+					href="https://npmjs.com/package/@quarkly/atomize"
+					display="flex"
+					text-decoration-line="initial"
+					margin="0px 4px 4px 0px"
+					target="_blank"
+				>
 					<Image src="https://camo.githubusercontent.com/03f43135e80bc5caf43888d25243383a181d7334/68747470733a2f2f666c61742e62616467656e2e6e65742f6e706d2f762f40717561726b6c792f61746f6d697a653f63616368653d33303030" />
 				</Link>
-				<Link href="#" display="flex" text-decoration-line="initial" margin="0px 4px 0px 0px">
+				<Link
+					href="https://camo.githubusercontent.com/a3d4e61babfb298637d411a8e471072266a17dce/68747470733a2f2f666c61742e62616467656e2e6e65742f62616467652f6c6963656e73652f4d49542f626c7565"
+					display="flex"
+					text-decoration-line="initial"
+					margin="0px 4px 4px 0px"
+					target="_blank"
+				>
 					<Image src="https://camo.githubusercontent.com/a3d4e61babfb298637d411a8e471072266a17dce/68747470733a2f2f666c61742e62616467656e2e6e65742f62616467652f6c6963656e73652f4d49542f626c7565" />
 				</Link>
 			</Box>
 		</Box>
 		<Box
 			box-sizing="border-box"
-			padding="80px 16px 260px 16px"
+			padding="60px 16px 240px 16px"
 			background="--color-greyL5"
 			position="relative"
 			z-index="1"
 			quarkly-title="Advantages"
 			overflow-x="hidden"
 			overflow-y="visible"
+			md-padding="40px 16px 220px 16px"
+			sm-padding="20px 16px 200px 16px"
 		>
 			<Box
 				quarkly-title="Container"
 				width="100%"
 				max-width="1170px"
 				margin="0 auto 0 auto"
-				display="block"
+				display="flex"
 				box-sizing="border-box"
 				flex-direction="column"
 				lg-max-width="970px"
 				md-max-width="750px"
 			>
-				<Box quarkly-title="Features">
-					<Box display="flex">
-						<Text
-							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
-							color="--greyD4"
-							display="inline-block"
-							width="100%"
-							margin="0 32px 0 0"
-							text-align="left"
-						>
-							Поддержка hover и других псевдоклассов
-						</Text>
-						<Text
-							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
-							color="--greyD4"
-							display="inline-block"
-							width="100%"
-							margin="0 32px 0 32px"
-							text-align="left"
-						>
-							Короткие алиасы на каждое свойство
-						</Text>
-						<Text
-							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
-							color="--greyD4"
-							display="inline-block"
-							width="100%"
-							margin="0 0 0 32px"
-							text-align="left"
-						>
-							Минималистичный интерфейс
-						</Text>
-					</Box>
-					<Box height="48px" />
-					<Box display="flex">
-						<Text
-							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
-							color="--greyD4"
-							display="inline-block"
-							width="100%"
-							margin="0 32px 0 0"
-							text-align="left"
-						>
-							Создание компонентов с поддержкой атомарного css и тем
-						</Text>
-						<Text
-							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
-							color="--greyD4"
-							display="inline-block"
-							width="100%"
-							margin="0 32px 0 32px"
-							text-align="left"
-						>
-							Применение стилей для конкретных медиа-брейкпоинтов
-						</Text>
-						<Text
-							font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
-							color="--greyD4"
-							display="inline-block"
-							width="100%"
-							margin="0 0 0 32px"
-							text-align="left"
-						>
-							Использование переменных из темы в составных css-свойствах
-						</Text>
-					</Box>
+				<Box display="flex" flex-wrap="wrap" margin="0px -20px 0px -20px" xs-margin="0px 0 0px 0">
+					<Text
+						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						color="--greyD4"
+						display="inline-block"
+						width="33.33%"
+						text-align="left"
+						md-margin="mixed 24px mixed 0"
+						sm-margin="10px 0 10px 0"
+						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+						margin="20px 0 20px 0"
+						padding="0px 20px 0px 20px"
+						box-sizing="border-box"
+						sm-width="50%"
+						sm-order="4"
+						xs-width="100%"
+						xs-padding="0px 0 0px 0"
+						xs-margin="8px 0 8px 0"
+					>
+						Поддержка hover и других псевдоклассов
+					</Text>
+					<Text
+						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						color="--greyD4"
+						display="inline-block"
+						width="33.33%"
+						text-align="left"
+						md-margin="mixed 24px mixed 24px"
+						sm-margin="10px 0 10px 0"
+						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+						margin="20px 0 20px 0"
+						padding="0px 20px 0px 20px"
+						box-sizing="border-box"
+						sm-width="50%"
+						sm-order="5"
+						xs-width="100%"
+						xs-padding="0px 0 0px 0"
+						xs-margin="8px 0 8px 0"
+					>
+						Короткие алиасы на каждое свойство
+					</Text>
+					<Text
+						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						color="--greyD4"
+						display="inline-block"
+						width="33.33%"
+						text-align="left"
+						md-margin="mixed 0 mixed 24px"
+						sm-margin="10px 0 10px 0"
+						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+						margin="20px 0 20px 0"
+						padding="0px 20px 0px 20px"
+						box-sizing="border-box"
+						sm-width="50%"
+						sm-order="6"
+						xs-width="100%"
+						xs-padding="0px 0 0px 0"
+						xs-margin="8px 0 8px 0"
+					>
+						Минималистичный интерфейс
+					</Text>
+					<Text
+						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						color="--greyD4"
+						display="inline-block"
+						width="33.33%"
+						text-align="left"
+						md-margin="mixed 24px mixed 0"
+						sm-margin="10px 0 10px 0"
+						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+						margin="20px 0 20px 0"
+						padding="0px 20px 0px 20px"
+						box-sizing="border-box"
+						sm-width="50%"
+						sm-order="1"
+						xs-width="100%"
+						xs-padding="0px 0 0px 0"
+						xs-margin="8px 0 8px 0"
+					>
+						Создание компонентов с поддержкой атомарного css и тем
+					</Text>
+					<Text
+						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						color="--greyD4"
+						display="inline-block"
+						width="33.33%"
+						text-align="left"
+						md-margin="mixed 24px mixed 24px"
+						sm-margin="10px 0 10px 0"
+						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+						margin="20px 0 20px 0"
+						padding="0px 20px 0px 20px"
+						box-sizing="border-box"
+						sm-width="50%"
+						sm-order="3"
+						xs-width="100%"
+						xs-padding="0px 0 0px 0"
+						xs-margin="8px 0 8px 0"
+					>
+						Применение стилей для конкретных медиа-брейкпоинтов
+					</Text>
+					<Text
+						font="normal 700 18px/1.5 --fontFamily-googleSourceSansPro"
+						color="--greyD4"
+						display="inline-block"
+						width="33.33%"
+						text-align="left"
+						md-margin="mixed 0 mixed 24px"
+						sm-margin="10px 0 10px 0"
+						sm-font="normal 700 16px/1.5 --fontFamily-googleSourceSansPro"
+						margin="20px 0 20px 0"
+						padding="0px 20px 0px 20px"
+						box-sizing="border-box"
+						sm-width="50%"
+						sm-order="2"
+						xs-width="100%"
+						xs-padding="0px 0 0px 0"
+						xs-margin="8px 0 8px 0"
+					>
+						Использование переменных из темы в составных css-свойствах
+					</Text>
 				</Box>
 			</Box>
 		</Box>
@@ -324,7 +476,7 @@ export default (() => {
 				overflow-x="hidden"
 				overflow-y="hidden"
 				box-sizing="border-box"
-				lg-max-width="970px"
+				lg-max-width="750px"
 				md-max-width="750px"
 			>
 				<Components.CodeSandBox
@@ -348,6 +500,7 @@ export default (() => {
 			flex-direction="column"
 			overflow-x="hidden"
 			overflow-y="visible"
+			md-padding="190px 16px 40px 16px"
 		>
 			<Box
 				display="flex"
@@ -357,6 +510,7 @@ export default (() => {
 				quarkly-title="Container"
 				lg-max-width="970px"
 				md-max-width="750px"
+				sm-justify-content="center"
 			>
 				<Box
 					quarkly-title="Docs"
@@ -364,9 +518,10 @@ export default (() => {
 					width="100%"
 					justify-content="flex-end"
 					margin="0px 4px 0px 0px"
+					sm-width="auto"
 				>
 					<Link
-						href="/doc#getting-started"
+						href="/docs"
 						font="normal 500 18px/20px --fontFamily-googleSourceSansPro"
 						color="#FFFFFF"
 						background="--color-accentBlue"
@@ -388,6 +543,7 @@ export default (() => {
 					width="100%"
 					justify-content="flex-start"
 					margin="0px 0px 0px 4px"
+					sm-width="auto"
 				>
 					<Link
 						href="https://github.com/quarkly/atomize"
@@ -415,6 +571,8 @@ export default (() => {
 			display="block"
 			overflow-x="hidden"
 			overflow-y="visible"
+			md-padding="60px 16px 60px 16px"
+			sm-padding="40px 16px 40px 16px"
 		>
 			<Box
 				quarkly-title="Container"
@@ -429,15 +587,21 @@ export default (() => {
 				lg-max-width="970px"
 				md-max-width="750px"
 			>
-				<Box display="flex" justify-content="space-between">
-					<Box width="100%" display="flex" align-items="center" justify-content="center">
-						<Link href="#">
-							<Image width="100%" src="http://dev8.aesarine.ru/scr1.png" flex="1 0 auto" border-radius="4px" />
+				<Box display="flex" justify-content="space-between" sm-flex-direction="column">
+					<Box width="100%" display="flex" justify-content="center" align-items="flex-start">
+						<Link href="#" display="flex">
+							<Image width="100%" src="https://uploads.quarkly.io/atomize-site/scr1.png" flex="1 0 auto" border-radius="4px" />
 						</Link>
 					</Box>
-					<Box width="100%" margin="0px 0px 0px 48px">
-						<Text font="normal 700 36px/1.2 --fontFamily-googleSourceSansPro" color="--greyD4" max-width="720px" margin="0 0 32px 0">
-							Создавайте виджеты для интерактивного редактирования в проекте{" "}
+					<Box width="100%" margin="0px 0px 0px 48px" sm-margin="40px 0px 0px 0px">
+						<Text
+							font="normal 700 36px/1.2 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							margin="0 0 32px 0"
+							lg-font="normal 700 28px/1.2 --fontFamily-googleSourceSansPro"
+							sm-margin="0 0 20px 0"
+						>
+							Atomize — основа компонентов{"\n\n\n\n "}
 							<Link
 								href="https://quarkly.io"
 								target="_blank"
@@ -448,14 +612,11 @@ export default (() => {
 								Quarkly.io
 							</Link>
 						</Text>
-						<Text max-width="640px" margin="0 0 0 0" font="--base" color="--greyD4">
-							Quarkly – это гибрид графического редактора, конструктора сайтов и классических IDE. В Quarkly любой 
-фронтендер
-
- и дизайнер могут создать собственный сайт или веб-приложение.
+						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
+							Quarkly — дизайн-инструмент для создания сайтов и веб-приложений с использованием компонентного подхода, react.js и атомарного css.{"\n\n"}
 						</Text>
-						<Text max-width="640px" margin="8px 0 0 0" font="--base" color="--greyD4">
-							При этом, фронтендер может добавлять в систему кастомные компоненты, а дизайнер – управлять ими прямо с холста в визуальном режиме. И наоборот: созданный макет в реальном времени трансформируется в код на React.
+						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
+							Atomize позволяет стилизовать компоненты в Quarkly в зависимости от брейкпоинта, управлять их состояниями, добавлять значения из темы, выводить необходимые пропсы на специальной панели и многое другое.{"\n\n"}
 						</Text>
 					</Box>
 				</Box>
@@ -467,6 +628,7 @@ export default (() => {
 			overflow-x="hidden"
 			overflow-y="visible"
 			quarkly-title="Footer"
+			md-padding="24px 16px 24px 16px"
 		>
 			<Box
 				quarkly-title="Container"
@@ -498,7 +660,7 @@ export default (() => {
 					GitHub
 				</Link>
 				<Link
-					href="/doc"
+					href="/docs"
 					font="normal 400 14px/20px --fontFamily-googleSourceSansPro"
 					color="--greyL2"
 					text-decoration-line="initial"
