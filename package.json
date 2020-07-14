@@ -6,8 +6,11 @@
         "start": "npm run develop",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d public",
         "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
     },
+    "homepage": "http://quarkly.github.io/atomize-site",
     "dependencies": {
         "gatsby": "^2.23.12",
         "gatsby-image": "^2.4.9",
