@@ -2,8 +2,20 @@ import React from "react";
 import theme from "theme";
 import { Theme, Image, Box, Text, Link } from "@quarkly/widgets";
 import * as Components from "components";
+import { Helmet } from "react-helmet";
 export default (() => {
 	return <Theme theme={theme}>
+		<Helmet>
+		<title>Atomize</title>
+		<meta name="author" content="quarkly" />
+		<meta name="description" content="Library for creating atomic react components" />
+		<link itemprop="url" href="https://atomize.quarkly.io/" />
+		<meta itemprop="name" content="atomize" />
+		<meta itemprop="description" content="Library for creating atomic react components" />
+		<meta itemprop="image" content="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+		<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+		<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+        </Helmet>
 		<Box
 			min-height="80vh"
 			display="flex"

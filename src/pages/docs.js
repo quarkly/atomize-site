@@ -4,8 +4,20 @@ import { Theme, Icon, Image, Box, Link, Text, Em, List } from "@quarkly/widgets"
 import { Override, SocialMedia } from "@quarkly/components";
 import * as Components from "components";
 import { MdClose, MdMenu } from "react-icons/md";
+import { Helmet } from "react-helmet";
 export default (() => {
 	return <Theme theme={theme}>
+		<Helmet>
+		<title>Getting Started | Atomize</title>
+		<meta name="author" content="quarkly" />
+		<meta name="description" content="Learn how to create your react components with atomize" />
+		<link itemprop="url" href="http://atomize.quarkly.io/docs/" />
+		<meta itemprop="name" content="atomize: Documentation" />
+		<meta itemprop="description" content="Learn how to create your react components with atomize" />
+		<meta itemprop="image" content="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+		<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+		<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo.png" />
+        </Helmet>
 		<Box quarkly-title="Wrapper" xs-display="flex" display="flex">
 			<Components.ToggleMenu />
 			<Box
