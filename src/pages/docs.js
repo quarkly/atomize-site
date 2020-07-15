@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Icon, Image, Box, Link, Text, Em, List } from "@quarkly/widgets";
+import { Theme, Box, Icon, Image, Link, Text, Em, List } from "@quarkly/widgets";
 import { Override, SocialMedia } from "@quarkly/components";
 import * as Components from "components";
 import { MdClose, MdMenu } from "react-icons/md";
@@ -18,8 +18,21 @@ export default (() => {
 			<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo-dark.png" />
 			<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo-dark.png" />
 		</Helmet>
-		<Box quarkly-title="Wrapper" xs-display="flex" display="flex">
+		<Box quarkly-title="Wrapper" xs-display="flex" display="flex" max-height="100vh">
 			<Components.ToggleMenu />
+			<Box
+				quarkly-title="Overlay"
+				position="fixed"
+				z-index="2"
+				width="0"
+				height="100%"
+				background="rgba(0, 0, 0, 0.1)"
+				id="side-overlay"
+				opacity="0"
+				min-width={0}
+				min-height={0}
+				transition="opacity 0.3s ease 0s"
+			/>
 			<Box
 				quarkly-title="Side"
 				id="side"
@@ -28,7 +41,7 @@ export default (() => {
 				width="100%"
 				max-width="240px"
 				position="relative"
-				z-index="1"
+				z-index="3"
 				max-height="100vh"
 				background="--color-greyL3"
 				min-height="100vh"
@@ -61,14 +74,15 @@ export default (() => {
 				/>
 				<Box flex="1 0 auto">
 					<Box quarkly-title="Logo" display="flex" margin="32px 0px 32px 0px" padding="0px 32px 0px 32px">
-						<Image
-							width="64px"
-							height="64px"
-							quarkly-title="Image"
-							src="https://uploads.quarkly.io/atomize-site/atomize-logo.svg"
-							alt="Quarkly / Atomize Logo"
-							margin="0px 8px 0px -4px"
-						/>
+						<Link href="/" display="flex">
+							<Image
+								width="64px"
+								height="64px"
+								quarkly-title="Image"
+								src="https://uploads.quarkly.io/atomize-site/atomize-logo.svg"
+								alt="Quarkly / Atomize Logo"
+							/>
+						</Link>
 					</Box>
 					<Box quarkly-title="Menu" id="menu">
 						<Link
@@ -247,7 +261,6 @@ export default (() => {
 				overflow-y="auto"
 				overflow-x="hidden"
 				width="100%"
-				max-height="100vh"
 			>
 				<Icon
 					category="md"
@@ -255,17 +268,17 @@ export default (() => {
 					quarkly-title="Open"
 					id="side-open"
 					position="absolute"
-					top="16px"
-					left="16px"
+					top={0}
+					left={0}
 					display="none"
-					sm-display="block"
+					sm-display="flex"
 					cursor="pointer"
 					transition="color 0.1s ease 0s"
 					color="--greyD3"
 					hover-color="--greyD1"
-					hover-width="36px"
-					hover-height="36px"
-					hover-font="36px sans-serif"
+					width="24px"
+					height="24px"
+					padding="16px 16px 16px 16px"
 				/>
 				<Box
 					id="getting-started"
@@ -281,38 +294,48 @@ export default (() => {
 					<Text quarkly-title="P" font="--base">
 						Before you start working with Atomize, you need to set up dependencies:
 					</Text>
-					<Components.Code />
+					<Components.Code>
+						<Override slot="text">
+							npm i @quarkly/atomize styled-components
+						</Override>
+					</Components.Code>
 					<Text quarkly-title="P" font="--base">
 						Atomize serves as a wrapper around a styled-component and has a similar API.
 						<br />
 						Just call the method using the name of the required element:
 					</Text>
-					<Components.Code font="--code">
-						import atomize from '@quarkly/atomize';
-						<br />
-						<br />
-						const Box = atomize.div();
+					<Components.Code>
+						<Override slot="text">
+							import atomize from '@quarkly/atomize';
+							<br />
+							<br />
+							const Box = atomize.div();
+						</Override>
 					</Components.Code>
 					<Text quarkly-title="P" font="--base">
 						As a result, we get the React component that can take any CSS in the form of properties:
 					</Text>
-					<Components.Code font="--code">
-						&lt;Box backgroundColor="red" /&gt;
+					<Components.Code>
+						<Override slot="text">
+							&lt;Box backgroundColor="red" /&gt;
+						</Override>
 					</Components.Code>
 					<Text quarkly-title="P" font="--base">
 						The React inheritance mechanism is also provided:
 					</Text>
-					<Components.Code font="--code">
-						const MyComponent = (&#123; className &#125;) =&gt; &#123;
-						<br />
-						{"    "}// some logic here
-						<br />
-						{"    "}return &lt;div className=&#123; className &#125; /&gt;;
-						<br />
-						&#125;;
-						<br />
-						<br />
-						const Box = atomize(MyComponent);
+					<Components.Code>
+						<Override slot="text">
+							const MyComponent = (&#123; className &#125;) =&gt; &#123;
+							<br />
+							{"    "}// some logic here
+							<br />
+							{"    "}return &lt;div className=&#123; className &#125; /&gt;;
+							<br />
+							&#125;;
+							<br />
+							<br />
+							const Box = atomize(MyComponent);
+						</Override>
 					</Components.Code>
 				</Box>
 				<Box
@@ -342,8 +365,10 @@ export default (() => {
 							<br />
 							For example, bgc === backgroundColor:
 						</Text>
-						<Components.Code font="--code">
-							&lt;Box bgc="red" /&gt;
+						<Components.Code>
+							<Override slot="text">
+								&lt;Box bgc="red" /&gt;
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							To see the full list of properties and aliases, follow this{" "}
@@ -367,8 +392,10 @@ export default (() => {
 						<Text quarkly-title="P" font="--base">
 							By default, Atomize components do not include a theme and you need to set up dependencies:
 						</Text>
-						<Components.Code font="--code">
-							npm i @quarkly/theme
+						<Components.Code>
+							<Override slot="text">
+								npm i @quarkly/theme
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Quarkly themes are based on CSS variables. The key feature is that variables from themes can be reused both in props and themes. You don’t have to use additional abstractions, like template functions, and no additional editing is needed.
@@ -377,54 +404,58 @@ export default (() => {
 							To use variables from a theme, just add your theme to an application with a Theme component, describe the property in the theme and call this property using the prefix "--". 
 You can also use it in the theme itself:
 						</Text>
-						<Components.Code font="--code">
-							import Theme from "@quarkly/theme";
-							<br />
-							<br />
-							const theme = &#123;
-							<br />
-							{"    "}color: &#123;
-							<br />
-							{"        "}dark: "#212121"
-							<br />
-							{"    "}&#125;,
-							<br />
-							{"    "}border: &#123;
-							<br />
-							{"        "}dark: "1px solid --color-dark"
-							<br />
-							{"    "}&#125;
-							<br />
-							&#125;;
-							<br />
-							<br />
-							export const MyBox = () =&gt; (
-							<br />
-							{"    "}&lt;Theme theme=&#123; theme &#125;&gt;
-							<br />
-							{"        "}&lt;Box
-							<br />
-							{"            "}width="100px"
-							<br />
-							{"            "}height="100px"
-							<br />
-							{"            "}
-							<br />
-							{"            "}border="--border-dark"
-							<br />
-							{"            "}color="--color-dark"
-							<br />
-							{"        "}/&gt;
-							<br />
-							{"    "}&lt;/Theme&gt;
-							<br />
-							);
+						<Components.Code>
+							<Override slot="text">
+								import Theme from "@quarkly/theme";
+								<br />
+								<br />
+								const theme = &#123;
+								<br />
+								{"    "}color: &#123;
+								<br />
+								{"        "}dark: "#212121"
+								<br />
+								{"    "}&#125;,
+								<br />
+								{"    "}border: &#123;
+								<br />
+								{"        "}dark: "1px solid --color-dark"
+								<br />
+								{"    "}&#125;
+								<br />
+								&#125;;
+								<br />
+								<br />
+								export const MyBox = () =&gt; (
+								<br />
+								{"    "}&lt;Theme theme=&#123; theme &#125;&gt;
+								<br />
+								{"        "}&lt;Box
+								<br />
+								{"            "}width="100px"
+								<br />
+								{"            "}height="100px"
+								<br />
+								{"            "}
+								<br />
+								{"            "}border="--border-dark"
+								<br />
+								{"            "}color="--color-dark"
+								<br />
+								{"        "}/&gt;
+								<br />
+								{"    "}&lt;/Theme&gt;
+								<br />
+								);
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Shorter syntax is used for colors in the JSX markup:
 						</Text>
-						<Components.Code font="--code">
-							&lt;Box color="--dark" /&gt;
+						<Components.Code>
+							<Override slot="text">
+								&lt;Box color="--dark" /&gt;
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box id="breakpoints" position="relative" padding="24px 0 24px 0" quarkly-title="Breakpoints">
@@ -442,54 +473,55 @@ You can also use it in the theme itself:
 							Themes have breakpoints for working with media expressions. 
 Any property can be prefixed with a breakpoint key name:
 						</Text>
-						<Components.Code font="--code">
-							import Theme from "@quarkly/theme";
-							<br />
-							<br />
-							const theme = &#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}breakpoints: &#123;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}sm: [&#123; type: "min-width", value: 576 &#125;],
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}md: [&#123; type: "min-width", value: 768 &#125;],
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}lg: [&#123; type: "min-width", value: 992 &#125;]
-							<br />
-							{"    \n\n\t\t\t\t\t"}&#125;,
-							<br />
-							{"    \n\n\t\t\t\t\t"}color: &#123;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}'dark-mobile': "#424242",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}'dark-tablet': "#212121"
-							<br />
-							{"    \n\n\t\t\t\t\t"}&#125;
-							<br />
-							&#125;
-							<br />
-							<br />
-							export const MyBox = () =&gt; (
-							<br />
-							{"    \n\n\t\t\t\t\t"}&lt;Theme theme=&#123; theme &#125;&gt;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}&lt;Box
-							<br />
-							{"    \n\n\n    \n\n\n    \n\n\t\t\t\t\t"}width="100px"
-							<br />
-							{"    \n\n\n    \n\n\n    \n\t\t\t\t\t"}height="100px"
-							<br />
-							{"    \n\n\n    \n\n\n    "}
-							<br />
-							{"    \n\n\n    \n\n\n    \n\n\t\t\t\t\t"}color="--dark-mobile"
-							<br />
-							{"    \n\n\n    \n\n\n    \n\n\t\t\t\t\t"}md-color="--dark-tablet"
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}/&gt;
-							<br />
-							{"    \n\n\t\t\t\t\t"}&lt;/Theme&gt;
-							<br />
-							);
+						<Components.Code>
+							<Override slot="text">
+								import Theme from "@quarkly/theme";
+								<br />
+								<br />
+								const theme = &#123;
+								<br />
+								{"    "}breakpoints: &#123;
+								<br />
+								{"        "}sm: [&#123; type: "min-width", value: 576 &#125;],
+								<br />
+								{"        "}md: [&#123; type: "min-width", value: 768 &#125;],
+								<br />
+								{"        "}lg: [&#123; type: "min-width", value: 992 &#125;]
+								<br />
+								{"    "}&#125;,
+								<br />
+								{"    "}color: &#123;
+								<br />
+								{"        "}'dark-mobile': "#424242",
+								<br />
+								{"        "}'dark-tablet': "#212121"
+								<br />
+								{"    "}&#125;
+								<br />
+								&#125;
+								<br />
+								<br />
+								export const MyBox = () =&gt; (
+								<br />
+								{"    "}&lt;Theme theme=&#123; theme &#125;&gt;
+								<br />
+								{"        "}&lt;Box
+								<br />
+								{"            "}width="100px"
+								<br />
+								{"            "}height="100px"
+								<br />
+								<br />
+								{"            "}color="--dark-mobile"
+								<br />
+								{"            "}md-color="--dark-tablet"
+								<br />
+								{"        "}/&gt;
+								<br />
+								{"    "}&lt;/Theme&gt;
+								<br />
+								);
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box id="effects" position="relative" padding="24px 0 24px 0" quarkly-title="Effects">
@@ -507,22 +539,24 @@ Any property can be prefixed with a breakpoint key name:
 							Just pass an object with the configuration to a component when creating it:
 							<br />
 						</Text>
-						<Components.Code font="--code">
-							const Button = atomize.button(&#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}effects: &#123;
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}hover: ":hover",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}focus: ":focus",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}active: ":active",
-							<br />
-							{"    \n\n\n    \n\n\t\t\t\t\t"}disabled: ":disabled"
-							<br />
-							{"    \n\n\t\t\t\t\t"}&#125;
-							<br />
-							&#125;);
+						<Components.Code>
+							<Override slot="text">
+								const Button = atomize.button(&#123;
+								<br />
+								{"    "}effects: &#123;
+								<br />
+								{"        "}hover: ":hover",
+								<br />
+								{"        "}focus: ":focus",
+								<br />
+								{"        "}active: ":active",
+								<br />
+								{"        "}disabled: ":disabled"
+								<br />
+								{"    "}&#125;
+								<br />
+								&#125;);
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							The key is the prefix in the name of the property, and the value is a CSS selector. This is the same way we implemented pseudo-classes.
@@ -530,28 +564,32 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="P" font="--base">
 							For example, if you specify the hover prefix for any CSS property, it will be applied to a certain effect:
 						</Text>
-						<Components.Code font="--code">
-							&lt;MySuperButton
-							<br />
-							{"    "}bgc="red"
-							<br />
-							{"    "}hover-bgc="yellow"
-							<br />
-							{"    "}focus-bgc="blue"
-							<br />
-							/&gt;
+						<Components.Code>
+							<Override slot="text">
+								&lt;MySuperButton
+								<br />
+								{"    "}bgc="red"
+								<br />
+								{"    "}hover-bgc="yellow"
+								<br />
+								{"    "}focus-bgc="blue"
+								<br />
+								/&gt;
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							You can also combine effects with media expressions:
 						</Text>
 						<Components.Code font="--code">
-							&lt;Box
-							<br />
-							{"    "}md-hover-bgc="yellow"
-							<br />
-							{"    "}lg-hover-bgc="blue"
-							<br />
-							/&gt;
+							<Override slot="text">
+								&lt;Box
+								<br />
+								{"    "}md-hover-bgc="yellow"
+								<br />
+								{"    "}lg-hover-bgc="blue"
+								<br />
+								/&gt;
+							</Override>
 						</Components.Code>
 					</Box>
 				</Box>
@@ -598,42 +636,44 @@ Any property can be prefixed with a breakpoint key name:
 							{" "}– configuration of controls that will be displayed on the right panel
 						</Text>
 					</List>
-					<Components.Code font="--code">
-						export default atomize(Box)(
-						<br />
-						{"    \n\n\t\t\t\t"}&#123;
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}effects: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}hover: ":hover"
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}&#125;,
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}description: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}en: "Awesome box component"
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}&#125;,
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}propInfo: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}someProp: &#123;
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\n    \n\n\t\t\t\t"}control: "input"
-						<br />
-						{"    \n\n\n    \n\n\n    \n\n\t\t\t\t"}&#125;
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}&#125;
-						<br />
-						{"    \n\n\t\t\t\t"}&#125;,
-						<br />
-						{"    \n\n\t\t\t\t"}&#123;
-						<br />
-						{"    \n\n\n    \n\n\t\t\t\t"}someProp: "Hello World!"
-						<br />
-						{"    \n\n\t\t\t\t"}&#125;
-						<br />
-						);
+					<Components.Code>
+						<Override slot="text">
+							export default atomize(Box)(
+							<br />
+							{"    "}&#123;
+							<br />
+							{"        "}effects: &#123;
+							<br />
+							{"            "}hover: ":hover"
+							<br />
+							{"        "}&#125;,
+							<br />
+							{"        "}description: &#123;
+							<br />
+							{"            "}en: "Awesome box component"
+							<br />
+							{"        "}&#125;,
+							<br />
+							{"        "}propInfo: &#123;
+							<br />
+							{"            "}someProp: &#123;
+							<br />
+							{"                "}control: "input"
+							<br />
+							{"            "}&#125;
+							<br />
+							{"        "}&#125;
+							<br />
+							{"    "}&#125;,
+							<br />
+							{"    "}&#123;
+							<br />
+							{"        "}someProp: "Hello World!"
+							<br />
+							{"    "}&#125;
+							<br />
+							);
+						</Override>
 					</Components.Code>
 					<Text quarkly-title="P" font="--base" margin="16px 0px 8px 0px">
 						Possible control options:
@@ -719,18 +759,20 @@ Any property can be prefixed with a breakpoint key name:
 								{" "}– control width. The range of values is from 0 to 1, which equals from 0 to 100% of the right panel width. It is possible to show several controls in one line
 							</Text>
 						</List>
-						<Components.Code font="--code">
-							someProp: &#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}description: &#123; en: "Your text" &#125;,
-							<br />
-							{"    \n\n\t\t\t\t\t"}control: "input",
-							<br />
-							{"    \n\n\t\t\t\t\t"}category: 'Main',
-							<br />
-							{"    \n\n\t\t\t\t\t"}weight: 1
-							<br />
-							&#125;
+						<Components.Code>
+							<Override slot="text">
+								someProp: &#123;
+								<br />
+								{"    "}description: &#123; en: "Your text" &#125;,
+								<br />
+								{"    "}control: "input",
+								<br />
+								{"    "}category: 'Main',
+								<br />
+								{"    "}weight: 1
+								<br />
+								&#125;
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="Radio-icon" margin="32px 0px 0px 0px">
@@ -743,8 +785,10 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="P" font="--base">
 							Property "checkedValue" describes the name for the selected option:
 						</Text>
-						<Components.Code font="--code">
-							checkedValue: "valueName"
+						<Components.Code>
+							<Override slot="text">
+								checkedValue: "valueName"
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="Checkbox-icon" margin="32px 0px 0px 0px">
@@ -759,10 +803,12 @@ Any property can be prefixed with a breakpoint key name:
 							<br />
 							Property "icon" describes the system name for the icon:
 						</Text>
-						<Components.Code font="--code">
-							checkedValue: "valueName",
-							<br />
-							icon: "iconName"
+						<Components.Code>
+							<Override slot="text">
+								checkedValue: "valueName",
+								<br />
+								icon: "iconName"
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="Select and radio-group" margin="32px 0px 0px 0px">
@@ -775,8 +821,10 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="P" font="--base">
 							Property "variants" contains a list of available options:
 						</Text>
-						<Components.Code font="--code">
-							variants: ['one', 'two', 'three']
+						<Components.Code>
+							<Override slot="text">
+								variants: ['one', 'two', 'three']
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="Font" margin="32px 0px 0px 0px">
@@ -786,8 +834,10 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="P" font="--base">
 							Returns a string with a font styles:
 						</Text>
-						<Components.Code font="--code">
-							italic normal 400 1em/1.5 --fontFamily-googleRoboto
+						<Components.Code>
+							<Override slot="text">
+								italic normal 400 1em/1.5 --fontFamily-googleRoboto
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="Color" margin="32px 0px 0px 0px">
@@ -805,15 +855,17 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="P" font="--base">
 							Returns a string with a variable or custom color in #HEX or RGBA and image or gradient styles if they were defined:
 						</Text>
-						<Components.Code font="--code">
-							// gradient styles
-							<br />
-							#000000 repeating-linear-gradient(90deg,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%)
-							<br />
-							<br />
-							// or image styles
-							<br />
-							--color-dark url(image.png) center/contain no-repeat fixed border-box
+						<Components.Code>
+							<Override slot="text">
+								// gradient styles
+								<br />
+								#000000 repeating-linear-gradient(90deg,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%)
+								<br />
+								<br />
+								// or image styles
+								<br />
+								--color-dark url(image.png) center/contain no-repeat fixed border-box
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="Transition, transform, shadow and filter" margin="32px 0px 0px 0px">
@@ -840,8 +892,10 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="H3" font="--headline3">
 							atomize
 						</Text>
-						<Components.Code font="--code">
-							import atomize from '@quarkly/atomize';
+						<Components.Code>
+							<Override slot="text">
+								import atomize from '@quarkly/atomize';
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Default export. This is a wrapper around styled from styled-components.
@@ -851,14 +905,18 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="H3" font="--headline3">
 							getTransfrom
 						</Text>
-						<Components.Code font="--code">
-							import &#123; getTransform &#125; from '@quarkly/atomize;
+						<Components.Code>
+							<Override slot="text">
+								import &#123; getTransform &#125; from '@quarkly/atomize;
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Method that returns a function by name to transform the value.
 						</Text>
-						<Components.Code font="--code" margin="16px 0px 0 0px">
-							getTransform(name: string): function
+						<Components.Code>
+							<Override slot="text">
+								getTransform(name: string): function
+							</Override>
 						</Components.Code>
 						<List margin="16px 0px 24px 0px">
 							<Text quarkly-title="Item" font="--base" margin="8px 0px 8px 0px">
@@ -872,28 +930,36 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="H3" font="--headline3">
 							transformVar
 						</Text>
-						<Components.Code font="--code">
-							import &#123; transformVar &#125; from '@quarkly/atomize;
+						<Components.Code>
+							<Override slot="text">
+								import &#123; transformVar &#125; from '@quarkly/atomize;
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Transform of CSS variables:
 						</Text>
-						<Components.Code font="--code">
-							transformVar(key: string, value: string): string;
+						<Components.Code>
+							<Override slot="text">
+								transformVar(key: string, value: string): string;
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box margin="32px 0px 0px 0px" quarkly-title="splitCSSRule">
 						<Text quarkly-title="H3" font="--headline3">
 							splitCSSRule
 						</Text>
-						<Components.Code font="--code">
-							import &#123; splitCSSRule &#125; from '@quarkly/atomize;
+						<Components.Code>
+							<Override slot="text">
+								import &#123; splitCSSRule &#125; from '@quarkly/atomize;
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Breaks the CSS string into an array of rules.
 						</Text>
-						<Components.Code font="--code">
-							splitCSSRule&lt;T&gt;(rule: T, separator?: string): Array&lt;T&gt;
+						<Components.Code>
+							<Override slot="text">
+								splitCSSRule&lt;T&gt;(rule: T, separator?: string): Array&lt;T&gt;
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="themeDefault" margin="32px 0px 0px 0px">
@@ -903,50 +969,60 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="P" font="--base">
 							Default theme for using CSS variables and defining breakpoints.
 						</Text>
-						<Components.Code font="--code">
-							import &#123; themeDefault &#125; from '@quarkly/atomize;
+						<Components.Code>
+							<Override slot="text">
+								import &#123; themeDefault &#125; from '@quarkly/atomize;
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="dict" margin="32px 0px 0px 0px">
 						<Text quarkly-title="H3" font="--headline3">
 							dict
 						</Text>
-						<Components.Code font="--code">
-							import &#123; dict &#125; from '@quarkly/atomize;
+						<Components.Code>
+							<Override slot="text">
+								import &#123; dict &#125; from '@quarkly/atomize;
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Dictionary for defining configuration of CSS rules
 						</Text>
-						<Components.Code font="--code">
-							type CSSRule = &#123;
-							<br />
-							{"    \n\n\t\t\t\t\t"}alias: string;
-							<br />
-							{"    \n\n\t\t\t\t\t"}type: Array&lt;string&gt; | string;
-							<br />
-							{"    \n\n\t\t\t\t\t"}&lt;key&gt;: string;
-							<br />
-							&#125;
+						<Components.Code>
+							<Override slot="text">
+								type CSSRule = &#123;
+								<br />
+								{"    "}alias: string;
+								<br />
+								{"    "}type: Array&lt;string&gt; | string;
+								<br />
+								{"    "}&lt;key&gt;: string;
+								<br />
+								&#125;
+							</Override>
 						</Components.Code>
 					</Box>
 					<Box quarkly-title="aliasesDict" margin="32px 0px 0px 0px">
 						<Text quarkly-title="H3" font="--headline3">
 							aliasesDict
 						</Text>
-						<Components.Code font="--code">
-							import &#123; aliasesDict &#125; from '@quarkly/atomize;
+						<Components.Code>
+							<Override slot="text">
+								import &#123; aliasesDict &#125; from '@quarkly/atomize;
+							</Override>
 						</Components.Code>
 						<Text quarkly-title="P" font="--base">
 							Dictionary of abbreviations generated from dict:
 						</Text>
-						<Components.Code font="--code">
-							type Alias =  Omit&lt;CSSRule, "alias"&gt; & &#123;
-							<br />
-							{"    "}name: string;
-							<br />
-							{"    "}&lt;key&gt;: string;
-							<br />
-							&#125;
+						<Components.Code>
+							<Override slot="text">
+								type Alias =  Omit&lt;CSSRule, "alias"&gt; & &#123;
+								<br />
+								{"    "}name: string;
+								<br />
+								{"    "}&lt;key&gt;: string;
+								<br />
+								&#125;
+							</Override>
 						</Components.Code>
 					</Box>
 				</Box>

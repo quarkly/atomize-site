@@ -4,18 +4,28 @@ const customJs = `
 	(function() {
 		const open = document.querySelector('#side-open');
 		const close = document.querySelector('#side-close');
-		const side = document.querySelector('#side')
+		const overlay = document.querySelector('#side-overlay');
+		const side = document.querySelector('#side');
 		
-		open.onclick = () => {
+		const openSide = () => {
 			side.style.left = '0px';
 			side.style.boxShadow = '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)';
+			overlay.style.width = '100%';
+			overlay.style.opacity = '1';
 		}
-		close.onclick = () => {
+		
+		const closeSide = () => {
 			side.dataset.open = 'close';
 			
-			side.style.left = '-240px';
+			side.style.left = '';
 			side.style.boxShadow = '';
+			overlay.style.width = '';
+			overlay.style.opacity = '';
 		}
+		
+		open.onclick = openSide;
+		overlay.onclick = closeSide;
+		close.onclick = closeSide;
 	})()
 `;
 
