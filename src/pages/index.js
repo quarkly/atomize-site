@@ -752,6 +752,7 @@ export default (() => {
 							target="_blank"
 							background="rgba(0, 0, 0, 0) url(https://uploads.quarkly.io/atomize-site/scr1.png) 0% 0% /contain no-repeat"
 							width="100%"
+							border-radius="4px"
 						>
 							<Box
 								width="100%"

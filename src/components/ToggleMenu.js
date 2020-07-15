@@ -2,10 +2,11 @@ import React, { useRef, useLayoutEffect } from "react";
 import atomize from "@quarkly/atomize";
 const customJs = `
 	(function() {
+		const side = document.querySelector('#side');
 		const open = document.querySelector('#side-open');
 		const close = document.querySelector('#side-close');
 		const overlay = document.querySelector('#side-overlay');
-		const side = document.querySelector('#side');
+		const links = document.querySelectorAll('[data-type="menu-link"]');
 		
 		const openSide = () => {
 			side.style.left = '0px';
@@ -26,6 +27,8 @@ const customJs = `
 		open.onclick = openSide;
 		overlay.onclick = closeSide;
 		close.onclick = closeSide;
+		
+		links.forEach(link => link.onclick = closeSide);
 	})()
 `;
 
