@@ -18,7 +18,13 @@ export default (() => {
 			<link rel="shortcut icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo-dark.png" />
 			<link rel="icon" href="https://uploads.quarkly.io/atomize-site/atomize-logo-dark.png" />
 		</Helmet>
-		<Box quarkly-title="Wrapper" xs-display="flex" display="flex" max-height="100vh">
+		<Box
+			quarkly-title="Wrapper"
+			xs-display="flex"
+			display="flex"
+			overflow-x="hidden"
+			overflow-y="visible"
+		>
 			<Components.ToggleMenu />
 			<Box
 				quarkly-title="Overlay"
@@ -40,7 +46,7 @@ export default (() => {
 				xs-flex="0 0 auto"
 				width="100%"
 				max-width="240px"
-				position="relative"
+				position="fixed"
 				z-index="3"
 				max-height="100vh"
 				background="--color-greyL3"
@@ -97,6 +103,7 @@ export default (() => {
 							quarkly-title="Getting Started"
 							padding="8px 16px 8px 32px"
 							transition="color 0.1s ease 0s"
+							data-type="menu-link"
 						>
 							Getting Started
 						</Link>
@@ -112,6 +119,7 @@ export default (() => {
 							quarkly-title="Advanced Usage"
 							padding="8px 16px 8px 32px"
 							transition="color 0.1s ease 0s"
+							data-type="menu-link"
 						>
 							Advanced Usage
 						</Link>
@@ -135,6 +143,7 @@ export default (() => {
 								padding="8px 16px 8px 48px"
 								margin="0px 0px 0px -32px"
 								transition="color 0.1s ease 0s"
+								data-type="menu-link"
 							>
 								Aliases
 							</Link>
@@ -151,6 +160,7 @@ export default (() => {
 								padding="8px 16px 8px 48px"
 								margin="0px 0px 0px -32px"
 								transition="color 0.1s ease 0s"
+								data-type="menu-link"
 							>
 								Themes
 							</Link>
@@ -167,6 +177,7 @@ export default (() => {
 								padding="8px 16px 8px 48px"
 								margin="0px 0px 0px -32px"
 								transition="color 0.1s ease 0s"
+								data-type="menu-link"
 							>
 								Breakpoints
 							</Link>
@@ -183,6 +194,7 @@ export default (() => {
 								padding="8px 16px 8px 48px"
 								margin="0px 0px 0px -32px"
 								transition="color 0.1s ease 0s"
+								data-type="menu-link"
 							>
 								Effects
 							</Link>
@@ -199,6 +211,7 @@ export default (() => {
 							quarkly-title="Quarkly Widgets"
 							padding="8px 16px 8px 32px"
 							transition="color 0.1s ease 0s"
+							data-type="menu-link"
 						>
 							Quarkly Widgets
 						</Link>
@@ -214,6 +227,7 @@ export default (() => {
 							quarkly-title="API Reference"
 							padding="8px 16px 8px 32px"
 							transition="color 0.1s ease 0s"
+							data-type="menu-link"
 						>
 							API Reference
 						</Link>
@@ -257,19 +271,22 @@ export default (() => {
 				z-index="1"
 				min-height="100vh"
 				box-sizing="border-box"
-				padding="88px 5% 56px 5%"
-				overflow-y="auto"
+				padding="0 5% 80px 5%"
+				overflow-y="visible"
 				overflow-x="hidden"
 				width="100%"
+				background="white"
+				margin="0px 0px 0px 240px"
+				sm-margin="0px 0px 0px 0px"
 			>
 				<Icon
 					category="md"
 					icon={MdMenu}
 					quarkly-title="Open"
 					id="side-open"
-					position="absolute"
-					top={0}
-					left={0}
+					position="fixed"
+					top="8px"
+					left="8px"
 					display="none"
 					sm-display="flex"
 					cursor="pointer"
@@ -278,12 +295,15 @@ export default (() => {
 					hover-color="--greyD1"
 					width="24px"
 					height="24px"
-					padding="16px 16px 16px 16px"
+					padding="12px 12px 12px 12px"
+					background="rgba(255, 255, 255, 0.9)"
+					z-index="2"
+					border-radius="50%"
 				/>
 				<Box
 					id="getting-started"
 					position="relative"
-					padding="24px 0 24px 0"
+					padding="112px 0 0 0"
 					quarkly-title="Getting Started"
 					max-width="800px"
 					xl-max-width="600px"
@@ -323,7 +343,7 @@ export default (() => {
 					<Text quarkly-title="P" font="--base">
 						The React inheritance mechanism is also provided:
 					</Text>
-					<Components.Code>
+					<Components.Code margin="16px 0px 0 0px">
 						<Override slot="text">
 							const MyComponent = (&#123; className &#125;) =&gt; &#123;
 							<br />
@@ -341,15 +361,15 @@ export default (() => {
 				<Box
 					id="advanced-usage"
 					position="relative"
-					padding="24px 0 24px 0"
+					padding="80px 0 0 0"
 					quarkly-title="Advanced Usage"
 					max-width="800px"
 					xl-max-width="600px"
 				>
-					<Text quarkly-title="H1" font="--headline1" margin="0 0px 24px 0px">
+					<Text quarkly-title="H1" font="--headline1" margin="0 0px -8px 0px">
 						Advanced Usage
 					</Text>
-					<Box id="aliases" position="relative" padding="16px 0 24px 0" quarkly-title="Aliases">
+					<Box id="aliases" position="relative" padding="48px 0 0 0" quarkly-title="Aliases">
 						<Text
 							quarkly-title="H2"
 							font="--headline2"
@@ -370,7 +390,7 @@ export default (() => {
 								&lt;Box bgc="red" /&gt;
 							</Override>
 						</Components.Code>
-						<Text quarkly-title="P" font="--base">
+						<Text quarkly-title="P" font="--base" margin="16px 0px 0px 0px">
 							To see the full list of properties and aliases, follow this{" "}
 							<Link href="https://github.com/quarkly/atomize/blob/master/docs/aliases.md" color="--blue" hover-color="--greyD4" active-color="--greyD4">
 								link
@@ -378,7 +398,7 @@ export default (() => {
 							.
 						</Text>
 					</Box>
-					<Box id="themes" position="relative" padding="24px 0 24px 0" quarkly-title="Themes">
+					<Box id="themes" position="relative" padding="48px 0 0 0" quarkly-title="Themes">
 						<Text
 							quarkly-title="H2"
 							font="--headline2"
@@ -452,13 +472,13 @@ You can also use it in the theme itself:
 						<Text quarkly-title="P" font="--base">
 							Shorter syntax is used for colors in the JSX markup:
 						</Text>
-						<Components.Code>
+						<Components.Code margin="16px 0px 0px 0px">
 							<Override slot="text">
 								&lt;Box color="--dark" /&gt;
 							</Override>
 						</Components.Code>
 					</Box>
-					<Box id="breakpoints" position="relative" padding="24px 0 24px 0" quarkly-title="Breakpoints">
+					<Box id="breakpoints" position="relative" padding="48px 0 0 0" quarkly-title="Breakpoints">
 						<Text
 							quarkly-title="H2"
 							font="--headline2"
@@ -473,7 +493,7 @@ You can also use it in the theme itself:
 							Themes have breakpoints for working with media expressions. 
 Any property can be prefixed with a breakpoint key name:
 						</Text>
-						<Components.Code>
+						<Components.Code margin="16px 0px 0 0px">
 							<Override slot="text">
 								import Theme from "@quarkly/theme";
 								<br />
@@ -524,7 +544,7 @@ Any property can be prefixed with a breakpoint key name:
 							</Override>
 						</Components.Code>
 					</Box>
-					<Box id="effects" position="relative" padding="24px 0 24px 0" quarkly-title="Effects">
+					<Box id="effects" position="relative" padding="48px 0 0 0" quarkly-title="Effects">
 						<Text
 							quarkly-title="H2"
 							font="--headline2"
@@ -580,7 +600,7 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="P" font="--base">
 							You can also combine effects with media expressions:
 						</Text>
-						<Components.Code font="--code">
+						<Components.Code font="--code" margin="16px 0px 0 0px">
 							<Override slot="text">
 								&lt;Box
 								<br />
@@ -596,7 +616,7 @@ Any property can be prefixed with a breakpoint key name:
 				<Box
 					id="quarkly-widgets"
 					position="relative"
-					padding="24px 0 24px 0"
+					padding="80px 0 0 0"
 					quarkly-title="Quarkly Widgets"
 					max-width="800px"
 					xl-max-width="600px"
@@ -872,7 +892,7 @@ Any property can be prefixed with a breakpoint key name:
 						<Text quarkly-title="H3" font="--headline3">
 							Transition, transform, shadow and filter
 						</Text>
-						<Text quarkly-title="P" font="--base">
+						<Text quarkly-title="P" font="--base" margin="16px 0px 0px 0px">
 							Returns a string with a property styles.
 						</Text>
 					</Box>
@@ -880,7 +900,7 @@ Any property can be prefixed with a breakpoint key name:
 				<Box
 					id="api-reference"
 					position="relative"
-					padding="24px 0 24px 0"
+					padding="80px 0 0 0"
 					quarkly-title="API Reference"
 					max-width="800px"
 					xl-max-width="600px"
