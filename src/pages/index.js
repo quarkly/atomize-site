@@ -1,8 +1,8 @@
 import React from "react";
 import theme from "theme";
 import { Theme, Image, Box, Text, Link } from "@quarkly/widgets";
-import * as Components from "components";
 import { Helmet } from "react-helmet";
+import * as Components from "components";
 export default (() => {
 	return <Theme theme={theme}>
 		<Helmet>
@@ -129,6 +129,7 @@ export default (() => {
 							opacity="1"
 							sm-font="normal 500 16px/20px --fontFamily-googleSourceSansPro"
 							sm-padding="12px 16px 14pxpx 16px"
+							target="_blank"
 						>
 							GitHub
 						</Link>
@@ -712,6 +713,7 @@ export default (() => {
 						transition="opacity .1s ease 0s"
 						text-shadow="0 1px 0 rgba(0, 0, 0, 0.25)"
 						opacity="1"
+						target="_blank"
 					>
 						GitHub
 					</Link>
@@ -744,8 +746,20 @@ export default (() => {
 			>
 				<Box display="flex" justify-content="space-between" sm-flex-direction="column">
 					<Box width="100%" display="flex" justify-content="center" align-items="flex-start">
-						<Link href="#" display="flex">
-							<Image width="100%" src="https://uploads.quarkly.io/atomize-site/scr1.png" flex="1 0 auto" border-radius="4px" />
+						<Link
+							href="https://quarkly.io"
+							display="block"
+							target="_blank"
+							background="rgba(0, 0, 0, 0) url(https://uploads.quarkly.io/atomize-site/scr1.png) 0% 0% /contain no-repeat"
+							width="100%"
+						>
+							<Box
+								width="100%"
+								padding="62.5% 0px 0px 0px"
+								min-height={0}
+								min-width={0}
+								height={0}
+							/>
 						</Link>
 					</Box>
 					<Box width="100%" margin="0px 0px 0px 48px" sm-margin="40px 0px 0px 0px">
@@ -763,6 +777,7 @@ export default (() => {
 								color="--accentBlue"
 								text-decoration-line="initial"
 								hover-color="--greyD4"
+								transition="color 0.1s ease 0s"
 							>
 								Quarkly.io
 							</Link>
@@ -816,6 +831,7 @@ and web apps. using components, react.js, and atomic CSS.
 					letter-spacing="2px"
 					transition="color .1s ease 0s"
 					quarkly-title="GitHub"
+					target="_blank"
 				>
 					GitHub
 				</Link>
@@ -846,6 +862,7 @@ and web apps. using components, react.js, and atomic CSS.
 					letter-spacing="2px"
 					transition="color .1s ease 0s"
 					quarkly-title="Dev.to"
+					target="_blank"
 				>
 					Dev.to
 				</Link>

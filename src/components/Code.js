@@ -8,8 +8,9 @@ const defaultProps = {
 	"overflow-x": "auto",
 	"margin": "16px 0px 28px 0px",
 	"padding": "16px 16px 16px 16px",
-	"background": "--color-greyD4",
 	"border-radius": "4px",
+	"font": "--code",
+	"background": "--color-greyD4",
 	"color": "--greyL5"
 };
 const overrides = {
@@ -20,9 +21,8 @@ const overrides = {
 			"font": "--code",
 			"margin": "0 0 0 0",
 			"white-space": "nowrap",
-			"children": <>
-				npm i @quarkly/atomize styled-components{"\n\n"}
-			</>
+			"color": "--codeDefault",
+			"children": "npm i @quarkly/atomize styled-components"
 		}
 	}
 };
