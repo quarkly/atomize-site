@@ -392,7 +392,7 @@ export default (() => {
 						</Components.Code>
 						<Text quarkly-title="P" font="--base" margin="16px 0px 0px 0px">
 							To see the full list of properties and aliases, follow this{" "}
-							<Link href="https://github.com/quarkly/atomize/blob/master/docs/aliases.md" color="--blue" hover-color="--greyD4" active-color="--greyD4">
+							<Link href="https://github.com/quarkly/atomize/blob/master/docs/aliases.md" color="--accentBlue" hover-color="--greyD4" active-color="--greyD4">
 								link
 							</Link>
 							.
