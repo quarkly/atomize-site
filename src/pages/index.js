@@ -1,6 +1,6 @@
 import React from "react";
 import theme from "theme";
-import { Theme, Image, Box, Text, Link } from "@quarkly/widgets";
+import { Theme, Image, Box, Text, Link, Strong } from "@quarkly/widgets";
 import { Helmet } from "react-helmet";
 import * as Components from "components";
 export default (() => {
@@ -721,6 +721,217 @@ export default (() => {
 			</Box>
 		</Box>
 		<Box
+			background="--color-greyL2"
+			padding="80px 16px 80px 16px"
+			display="block"
+			overflow-x="hidden"
+			overflow-y="visible"
+			md-padding="60px 16px 60px 16px"
+			sm-padding="40px 16px 40px 16px"
+			xs-padding="20px 16px 40px 16px"
+			quarkly-title="Molecules"
+		>
+			<Box
+				quarkly-title="Container"
+				margin="0px auto 0px auto"
+				height="100%"
+				flex="1 0 auto"
+				display="flex"
+				flex-wrap="wrap"
+				max-width="1170px"
+				width="100%"
+				box-sizing="border-box"
+				lg-max-width="970px"
+				md-max-width="750px"
+			>
+				<Box display="flex" justify-content="space-between" sm-flex-direction="column">
+					<Box width="100%" margin="0px 48px 0px 0" sm-margin="40px 0px 0px 0px">
+						<Text
+							font="normal 700 36px/1.2 --fontFamily-googleSourceSansPro"
+							color="--greyD4"
+							margin="0 0 24px 0"
+							lg-font="normal 700 28px/1.2 --fontFamily-googleSourceSansPro"
+							sm-margin="0 0 20px 0"
+						>
+							<Link
+								href="https://molecules.quarkly.io/"
+								target="_blank"
+								color="--accentBlue"
+								text-decoration-line="initial"
+								hover-color="--greyD4"
+								transition="color 0.1s ease 0s"
+							>
+								Molecules
+							</Link>
+							{" "}— a 
+UI component library where Atomize is used
+						</Text>
+						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
+							<Strong>
+								8 elements
+							</Strong>
+							{" "}for designing an interface for your website or app:
+						</Text>
+						<Box
+							display="flex"
+							width="100%"
+							justify-content="space-around"
+							text-align="center"
+							margin="40px 0px 0px 0px"
+							md-margin="20px 0px 0px 0px"
+							sm-margin="0px 0px 0x 0px"
+							sm-justify-content="flex-start"
+						>
+							<Box text-align="left" width="25%" sm-width="20%" xs-width="25%">
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-box--default"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="Box"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+								>
+									Box
+								</Link>
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-button--submit"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="Button"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+									sm-margin="6px 0px 12px 0px"
+								>
+									Button
+								</Link>
+							</Box>
+							<Box width="25%" sm-width="20%" xs-width="25%">
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-line--default"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="Line"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+								>
+									Line
+								</Link>
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-image--default"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="Image"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+									sm-margin="6px 0px 12px 0px"
+								>
+									Image
+								</Link>
+							</Box>
+							<Box width="25%" sm-width="20%" xs-width="25%">
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-input--default-input"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="Input"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+								>
+									Input
+								</Link>
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-select--default"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="Select"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+									sm-margin="6px 0px 12px 0px"
+								>
+									Select
+								</Link>
+							</Box>
+							<Box text-align="right" width="25%" sm-width="20%" xs-width="25%">
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-list--ul-default"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="List"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+								>
+									List
+								</Link>
+								<Link
+									href="https://molecules.quarkly.io/?path=/story/primitives-text--default"
+									target="_blank"
+									font="normal 600 18px/1.5 --fontFamily-googleSourceSansPro"
+									color="--greyD4"
+									margin="12px 0px 0px 0px"
+									text-decoration-line="initial"
+									hover-color="--accentBlue"
+									quarkly-title="Text"
+									display="block"
+									text-align="left"
+									transition="color .1s ease 0s"
+									sm-margin="6px 0px 12px 0px"
+								>
+									Text
+								</Link>
+							</Box>
+						</Box>
+					</Box>
+					<Box width="100%" display="flex" justify-content="center" align-items="flex-start">
+						<Link
+							href="https://quarkly.io"
+							display="block"
+							target="_blank"
+							background="rgba(0, 0, 0, 0) url() 0% 0% /contain no-repeat"
+							width="100%"
+							border-radius="4px"
+						>
+							<Image width="100%" src="https://uploads.quarkly.io/atomize-site/molecules-quarkly-storybook.png" max-width="560px" />
+						</Link>
+					</Box>
+				</Box>
+			</Box>
+		</Box>
+		<Box
 			quarkly-title="Quarkly"
 			background="--color-greyL5"
 			padding="80px 16px 80px 16px"
@@ -750,24 +961,18 @@ export default (() => {
 							href="https://quarkly.io"
 							display="block"
 							target="_blank"
-							background="rgba(0, 0, 0, 0) url(https://uploads.quarkly.io/atomize-site/scr1.png) 0% 0% /contain no-repeat"
+							background="rgba(0, 0, 0, 0) url() 0% 0% /contain no-repeat"
 							width="100%"
 							border-radius="4px"
 						>
-							<Box
-								width="100%"
-								padding="62.5% 0px 0px 0px"
-								min-height={0}
-								min-width={0}
-								height={0}
-							/>
+							<Image width="100%" src="https://uploads.quarkly.io/atomize-site/quarkly-ui.png" max-width="560px" />
 						</Link>
 					</Box>
 					<Box width="100%" margin="0px 0px 0px 48px" sm-margin="40px 0px 0px 0px">
 						<Text
 							font="normal 700 36px/1.2 --fontFamily-googleSourceSansPro"
 							color="--greyD4"
-							margin="0 0 32px 0"
+							margin="0 0 24px 0"
 							lg-font="normal 700 28px/1.2 --fontFamily-googleSourceSansPro"
 							sm-margin="0 0 20px 0"
 						>
@@ -850,6 +1055,38 @@ and web apps. using components, react.js, and atomic CSS.
 					quarkly-title="Docs"
 				>
 					Docs
+				</Link>
+				<Link
+					font="normal 400 14px/20px --fontFamily-googleSourceSansPro"
+					color="--greyL2"
+					text-decoration-line="initial"
+					text-transform="uppercase"
+					hover-color="--greyL1"
+					padding="8px 16px 8px 16px"
+					display="block"
+					href="https://quarkly.io"
+					letter-spacing="2px"
+					transition="color .1s ease 0s"
+					quarkly-title="Quarkly"
+					target="_blank"
+				>
+					Quarkly
+				</Link>
+				<Link
+					font="normal 400 14px/20px --fontFamily-googleSourceSansPro"
+					color="--greyL2"
+					text-decoration-line="initial"
+					text-transform="uppercase"
+					hover-color="--greyL1"
+					padding="8px 16px 8px 16px"
+					display="block"
+					href="https://molecules.quarkly.io/"
+					letter-spacing="2px"
+					transition="color .1s ease 0s"
+					quarkly-title="Molecules"
+					target="_blank"
+				>
+					Molecules
 				</Link>
 				<Link
 					href="https://dev.to/alex_kols/why-we-gave-up-on-the-idea-of-using-styled-system-to-create-components-and-invented-a-new-wheel-5c4n"
