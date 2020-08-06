@@ -37,7 +37,7 @@ export default function HTML(props) {
 
         {props.postBodyComponents}
       </body>
-      <script
+      <div
         dangerouslySetInnerHTML={{
           __html: `<!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
@@ -55,7 +55,7 @@ export default function HTML(props) {
 <noscript><div><img src="https://mc.yandex.ru/watch/51958589" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->`,
         }}
-      ></script>
+      ></div>
     </html>
   )
 }
