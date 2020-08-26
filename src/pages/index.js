@@ -9,6 +9,7 @@ export default (() => {
 			<title>Atomize</title>
 			<meta name="author" content="quarkly" />
 			<meta name="description" content="Library for creating atomic react components" />
+			<meta name="saashub-verification" content="d54pkijrh3g1" />
 			<link itemprop="url" href="https://atomize.quarkly.io/" />
 			<meta itemprop="name" content="atomize" />
 			<meta itemprop="description" content="Library for creating atomic react components" />
@@ -249,7 +250,7 @@ export default (() => {
 					xs-width="100%"
 				>
 					<Link
-						href="/docs#quarkly-widgets"
+						href="/docs#api-reference"
 						font="--leadSmall"
 						color="--greyL2"
 						text-decoration-line="initial"
@@ -992,10 +993,10 @@ UI component library where Atomize is used
 						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
 							Quarkly is a design tool
 for creating websites
-and web apps. using components, react.js, and atomic CSS.
+and web apps, using components, react.js, and atomic CSS.
 						</Text>
 						<Text margin="8px 0 0 0" font="normal 400 18px/1.5 --fontFamily-googleSourceSansPro" color="--greyD4">
-							Atomize allows you to set styles for a specific component depending on a breakpoint, configure their states, add variables from the theme, transfer the desired props on a special panel (Props tab), and more.
+							Atomize allows you to set styles for a specific component depending on a breakpoint, configure their states, add variables from the theme, transfer the desired props on a special panel (Props tab), and more.
 						</Text>
 					</Box>
 				</Box>
@@ -1008,6 +1009,7 @@ and web apps. using components, react.js, and atomic CSS.
 			overflow-y="visible"
 			quarkly-title="Footer"
 			md-padding="24px 16px 24px 16px"
+			sm-margin="0px 0px 80px 0px"
 		>
 			<Box
 				quarkly-title="Container"
